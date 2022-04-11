@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
 
-public class LazySingleton<T> : MonoBehaviour where T : LazySingleton<T>
+namespace Core
 {
-    private static T instance;
-
-    public static T Instance
+    public class LazySingleton<T> : MonoBehaviour where T : LazySingleton<T>
     {
-        get
+        private static T instance;
+
+        public static T Instance
         {
-            if (instance is null)
+            get
             {
-                instance = FindObjectOfType<T>();
-            }
+                if (instance is null)
+                {
+                    instance = FindObjectOfType<T>();
+                }
 
-            if (instance is null)
-            {
-                var gameObject = new GameObject(typeof(T).Name);
-                instance = gameObject.AddComponent<T>();
-            }
+                if (instance is null)
+                {
+                    var gameObject = new GameObject(typeof(T).Name);
+                    instance = gameObject.AddComponent<T>();
+                }
 
-            return instance;
+                return instance;
+            }
         }
     }
 }

@@ -1,0 +1,16 @@
+/loadwep machinegunmodule
+/loadwep gemhighmachinegunmodule
+/loadwep burstmodule
+/loadwep gemhighburstmodule
+/loadwep lasermodule
+/loadwep gemhighlasermodule
+/loadwep laserriflemodule
+/loadwep gemhighlaserriflemodule
+/loadwep noppymodule
+/loadwep gemhighnoppymodule
+/loadwep punchermodule
+/loadwep gemhighpunchermodule
+/loadwep shotgunmodule
+/loadwep gemhighshotgunmodule
+/loadwep triplemodule
+/loadwep gemhightriplemodule
