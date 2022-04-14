@@ -9,11 +9,13 @@ public class HealthUI : MonoBehaviour
     private void OnEnable()
     {
         health.TookDamageEvent += RefreshUI;
+        health.HealDamageEvent += RefreshUI;
     }
 
     private void OnDisable()
     {
         health.TookDamageEvent -= RefreshUI;
+        health.HealDamageEvent -= RefreshUI;
     }
     
     

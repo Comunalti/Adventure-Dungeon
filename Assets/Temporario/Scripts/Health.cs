@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
    public bool isDead;
    
    public event Action<float> TookDamageEvent;
+   public event Action<float> HealDamageEvent;
    public event Action DiedEvent;
 
    
@@ -35,6 +36,17 @@ public class Health : MonoBehaviour
             DiedEvent?.Invoke();
             isDead = true;
         }
+    }
+
+    public void HealHp(float quantity)
+    {
+        if (isDead)
+        {
+            return;
+        }
+
+        currentHp = Mathf.Clamp(currentHp+quantity, 0, maxHp);
+        HealDamageEvent?.Invoke(quantity);
     }
     
     public float GetPercentage()
