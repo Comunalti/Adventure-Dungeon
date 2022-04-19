@@ -13,20 +13,14 @@ namespace DefaultNamespace
 
         public bool canFire;
         public float delayTime = 1;
-        private void Fire()
-        {
-            if (!canFire)
-            {
-                return;
-            }
+        public FireDelegate fireDelegate;
 
-            canFire = false;
-            var bullet = Instantiate(bulletPrefab, spawnPivot.position,transform.rotation);
-            //bullet.BroadcastMessage("FireInDirection",,SendMessageOptions.RequireReceiver);
-            StartCoroutine(ResetFire());
+        public void CallFire() 
+        {
+            fireDelegate.Fire(this);
         }
 
-        private IEnumerator ResetFire()
+        public IEnumerator ResetFire()
         {
             yield return new WaitForSeconds(delayTime);
             canFire = true;
@@ -34,12 +28,12 @@ namespace DefaultNamespace
 
         private void OnEnable()
         {
-            InputManager.Instance.MouseRightClickEvent += Fire;   
+            InputManager.Instance.MouseRightClickEvent += CallFire;   
         }
 
         private void OnDisable()
         {
-            InputManager.Instance.MouseRightClickEvent -= Fire;
+            InputManager.Instance.MouseRightClickEvent -= CallFire;
         }
     }
 }
