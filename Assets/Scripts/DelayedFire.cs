@@ -8,6 +8,7 @@ namespace DefaultNamespace
     {
         public float delayTime = 1;
         public GameObject bulletPrefab;
+        public int bullets = 2;
         public override void Fire(SimpleWeaponController weaponController)
         {
             if (!weaponController.canFire)
@@ -25,9 +26,12 @@ namespace DefaultNamespace
 
         public IEnumerator SpawnBullet(SimpleWeaponController weaponController)
         {
-            var bullet1 = Object.Instantiate(bulletPrefab, weaponController.spawnPivot.position,weaponController.transform.rotation);
-            yield return new WaitForSeconds(delayTime);
-            var bullet2 = Object.Instantiate(bulletPrefab, weaponController.spawnPivot.position,weaponController.transform.rotation);
+            for (int i = 0; i < bullets; i++)
+            {
+                var bullet = Object.Instantiate(bulletPrefab, weaponController.spawnPivot.position,weaponController.transform.rotation);
+                if (i != bullets-1)
+                    yield return new WaitForSeconds(delayTime);
+            }
         }
     }
 }

@@ -827,7 +827,7 @@ MonoBehaviour:
   spawnPivot: {fileID: 6274426}
   canFire: 1
   delayTime: 0.1
-  fireDelegate: {fileID: 11400000, guid: ba94c6ada02e28f448c48a36c2ae7ed7, type: 2}
+  fireDelegate: {fileID: 11400000, guid: 8293898af9cfe864483dfa748a3cc32e, type: 2}
 --- !u!1 &1073335918
 GameObject:
   m_ObjectHideFlags: 0

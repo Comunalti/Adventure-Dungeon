@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149968a6ff3142509a68b8a0a8563f84, type: 3}
-  m_Name: DualFire
+  m_Name: MultipleFire
   m_EditorClassIdentifier: 
-  angle: 10
-  scale: -0.1
   bulletPrefab: {fileID: 2263298570718683906, guid: b9b762292c6a97544b26332a294f047d, type: 3}
+  bullets: 5
+  maxAngle: 1
+  minAngle: -1
+  scale: 20
