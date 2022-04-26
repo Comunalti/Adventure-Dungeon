@@ -13,6 +13,8 @@ namespace Managers
         public event Action<Vector2> MouseMovedEvent;
         public event Action<Vector2> DirectionChangedEvent;
 
+        public event Action DashEvent;
+
         private ControlMap _controlMap;
 
         private void Start()
@@ -70,6 +72,15 @@ namespace Managers
             
             //print("OnDirection");
             DirectionChangedEvent?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        public void OnDashAction(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton() && context.performed)
+            {
+                DashEvent?.Invoke();
+
+            }
         }
     }
 }

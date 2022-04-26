@@ -123,6 +123,15 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""DashAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""4421e6e2-a378-49e3-8658-dd7465a13298"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -180,6 +189,17 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""action"": ""Direction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69c184f1-85a5-4e0a-9ce3-557f2b22db86"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DashAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -195,6 +215,7 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         // MovimentMap
         m_MovimentMap = asset.FindActionMap("MovimentMap", throwIfNotFound: true);
         m_MovimentMap_Direction = m_MovimentMap.FindAction("Direction", throwIfNotFound: true);
+        m_MovimentMap_DashAction = m_MovimentMap.FindAction("DashAction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -312,11 +333,13 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_MovimentMap;
     private IMovimentMapActions m_MovimentMapActionsCallbackInterface;
     private readonly InputAction m_MovimentMap_Direction;
+    private readonly InputAction m_MovimentMap_DashAction;
     public struct MovimentMapActions
     {
         private @ControlMap m_Wrapper;
         public MovimentMapActions(@ControlMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Direction => m_Wrapper.m_MovimentMap_Direction;
+        public InputAction @DashAction => m_Wrapper.m_MovimentMap_DashAction;
         public InputActionMap Get() { return m_Wrapper.m_MovimentMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -329,6 +352,9 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                 @Direction.started -= m_Wrapper.m_MovimentMapActionsCallbackInterface.OnDirection;
                 @Direction.performed -= m_Wrapper.m_MovimentMapActionsCallbackInterface.OnDirection;
                 @Direction.canceled -= m_Wrapper.m_MovimentMapActionsCallbackInterface.OnDirection;
+                @DashAction.started -= m_Wrapper.m_MovimentMapActionsCallbackInterface.OnDashAction;
+                @DashAction.performed -= m_Wrapper.m_MovimentMapActionsCallbackInterface.OnDashAction;
+                @DashAction.canceled -= m_Wrapper.m_MovimentMapActionsCallbackInterface.OnDashAction;
             }
             m_Wrapper.m_MovimentMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -336,6 +362,9 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                 @Direction.started += instance.OnDirection;
                 @Direction.performed += instance.OnDirection;
                 @Direction.canceled += instance.OnDirection;
+                @DashAction.started += instance.OnDashAction;
+                @DashAction.performed += instance.OnDashAction;
+                @DashAction.canceled += instance.OnDashAction;
             }
         }
     }
@@ -350,5 +379,6 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
     public interface IMovimentMapActions
     {
         void OnDirection(InputAction.CallbackContext context);
+        void OnDashAction(InputAction.CallbackContext context);
     }
 }

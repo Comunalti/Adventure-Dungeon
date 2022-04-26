@@ -8,7 +8,7 @@ namespace MovementCommands
         public float speed;
         public override void Move(Rigidbody2D character, Vector2 direction)
         {
-            character.MovePosition( character.position + direction * (speed * Time.deltaTime));
+            character.transform.Translate(direction*speed*Time.deltaTime);
         }
     }
 }
