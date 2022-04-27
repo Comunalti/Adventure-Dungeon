@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHp: 10
   maxHp: 10
+  isInvincible: 0
   isDead: 0
 --- !u!4 &427432099
 Transform:
@@ -1461,10 +1462,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6efd5e39a961eb243af7fb47979ced78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
   dashSpeed: 5
   direction: {x: 0, y: 0}
   canDash: 1
   dashDelay: 1
+  invincibilityTime: 1
 --- !u!50 &2081287990
 Rigidbody2D:
   serializedVersion: 4
@@ -1578,6 +1581,14 @@ PrefabInstance:
     - target: {fileID: 3902745570108320438, guid: 478d3c835c73ecf4badad3569cb76221, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174453450692716187, guid: 478d3c835c73ecf4badad3569cb76221, type: 3}
+      propertyPath: isDead
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174453450692716187, guid: 478d3c835c73ecf4badad3569cb76221, type: 3}
+      propertyPath: isInvincible
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236183975529004879, guid: 478d3c835c73ecf4badad3569cb76221, type: 3}
       propertyPath: m_Camera

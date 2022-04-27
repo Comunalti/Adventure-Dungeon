@@ -10,7 +10,7 @@ public class NewDash : MonoBehaviour
     [SerializeField] private Health health;
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private float dashSpeed = 1;
-    [SerializeField] private Vector2 direction;
+     private Vector2 _direction;
     [SerializeField] private bool canDash;
     [SerializeField] private float dashDelay = 1;
     [SerializeField] private float invincibilityTime = 1;
@@ -48,14 +48,14 @@ public class NewDash : MonoBehaviour
 
     private void OnDirectionChanged(Vector2 obj)
     {
-        direction = obj;
+        _direction = obj;
     }
 
     private void OnDash()
     {
         if (canDash)
         {
-            _rigidbody2D.AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+            _rigidbody2D.AddForce(_direction * dashSpeed, ForceMode2D.Impulse);
             canDash = false;
             health.isInvincible = true;
             StartCoroutine(ResetDash());
