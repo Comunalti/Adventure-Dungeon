@@ -7,10 +7,27 @@ using UnityEngine.UI;
 
 public class NewDash : MonoBehaviour
 {
-    
+    [SerializeField] private Health health;
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private float dashSpeed = 1;
     [SerializeField] private Vector2 direction;
+    [SerializeField] private bool canDash;
+    [SerializeField] private float dashDelay = 1;
+    [SerializeField] private float invincibilityTime = 1;
+    public event Action DashFireEvent;
+    public event Action DashFailEvent;
+
+    private IEnumerator ResetInvincibility()
+    {
+        yield return new WaitForSeconds(invincibilityTime);
+        health.isInvincible = false;
+    }
+    private IEnumerator ResetDash()
+    {
+        yield return new WaitForSeconds(dashDelay);
+        canDash = true;
+    }
+    
 
     private void Start()
     {
@@ -36,7 +53,19 @@ public class NewDash : MonoBehaviour
 
     private void OnDash()
     {
-        _rigidbody2D.AddForce(direction * dashSpeed, ForceMode2D.Impulse);
-        print("Dash");
+        if (canDash)
+        {
+            _rigidbody2D.AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+            canDash = false;
+            health.isInvincible = true;
+            StartCoroutine(ResetDash());
+            StartCoroutine(ResetInvincibility());
+
+            DashFireEvent?.Invoke();
+        }
+        else
+        {
+            DashFailEvent?.Invoke();
+        }
     }
 }

@@ -79,7 +79,7 @@ namespace Managers
             if (context.ReadValueAsButton() && context.performed)
             {
                 DashEvent?.Invoke();
-
+                
             }
         }
     }

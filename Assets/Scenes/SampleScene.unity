@@ -1463,6 +1463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashSpeed: 5
   direction: {x: 0, y: 0}
+  canDash: 1
+  dashDelay: 1
 --- !u!50 &2081287990
 Rigidbody2D:
   serializedVersion: 4

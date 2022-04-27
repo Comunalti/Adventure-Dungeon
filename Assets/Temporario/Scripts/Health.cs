@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 {
    [SerializeField] private float currentHp = 0;
    [SerializeField] private float maxHp = 10;
-
+   public bool isInvincible;
    public bool isDead;
    
    public event Action<float> TookDamageEvent;
@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
 
    public void RemoveHp(float quantity)
     {
-        if (isDead)
+        if (isDead||isInvincible)
         {
             return;
         }
