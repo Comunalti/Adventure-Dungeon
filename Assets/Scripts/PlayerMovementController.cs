@@ -9,9 +9,6 @@ public class PlayerMovementController : MonoBehaviour
     private Vector2 _direction;
 
     private Rigidbody2D _rigidbody2D;
-
-    
-
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -39,4 +36,5 @@ public class PlayerMovementController : MonoBehaviour
     {
         _direction = direction;
     }
+
 }

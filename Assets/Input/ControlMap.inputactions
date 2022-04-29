@@ -101,6 +101,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "DashAction",
+                    "type": "Button",
+                    "id": "4421e6e2-a378-49e3-8658-dd7465a13298",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -158,6 +167,17 @@
                     "action": "Direction",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "69c184f1-85a5-4e0a-9ce3-557f2b22db86",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
