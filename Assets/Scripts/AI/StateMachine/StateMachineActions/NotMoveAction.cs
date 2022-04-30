@@ -8,7 +8,7 @@ namespace DefaultNamespace.AI.StateMachine.StateMachineActions
     {
         public override void Execute(BaseStateMachine machine)
         {
-            machine.GetComponent<NavMeshAgent>().ResetPath();
+            machine.agent.ResetPath();
         }
     }
 }
