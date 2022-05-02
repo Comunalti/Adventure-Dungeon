@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Damage;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,25 +13,27 @@ public class Health : MonoBehaviour
    public bool isInvincible;
    public bool isDead;
    
+   
    public event Action<float> TookDamageEvent;
+   public event Action<DamageParameter> TookElementalDamageEvent; 
    public event Action<float> HealDamageEvent;
    public event Action DiedEvent;
 
-   
    private void Start()
    {
        currentHp = maxHp;
    }
 
-   public void RemoveHp(float quantity)
+   public void RemoveHp(DamageParameter damageParameter)
     {
         if (isDead||isInvincible)
         {
             return;
         }
         
-        currentHp -= quantity;
-        TookDamageEvent?.Invoke(quantity);
+        currentHp -= damageParameter.damageQuantity;
+        TookDamageEvent?.Invoke(damageParameter.damageQuantity);
+        TookElementalDamageEvent?.Invoke(damageParameter);
 
         if (currentHp <= 0)
         {

@@ -99,7 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   bulletLifeTime: 2
-  dmg: 1
+  damageQuantity: 1
+  elementalDamage:
+    nome: 
   owner: {fileID: 0}
 --- !u!58 &2080760263257179605
 CircleCollider2D:
