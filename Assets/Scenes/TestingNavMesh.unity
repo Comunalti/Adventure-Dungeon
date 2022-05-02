@@ -398,9 +398,10 @@ GameObject:
   - component: {fileID: 1302335530}
   - component: {fileID: 1302335529}
   - component: {fileID: 1302335528}
-  - component: {fileID: 1302335535}
   - component: {fileID: 1302335537}
   - component: {fileID: 1302335536}
+  - component: {fileID: 1302335538}
+  - component: {fileID: 1302335539}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -424,6 +425,7 @@ MonoBehaviour:
   characterHandler: {fileID: 0}
   agent: {fileID: 0}
   patrolHandler: {fileID: 0}
+  timerHandler: {fileID: 0}
   _baseState: {fileID: 0}
   initialState: {fileID: 11400000, guid: 0a6e34718cd245a4d9fa5f8119ca71ac, type: 2}
 --- !u!114 &1302335529
@@ -451,8 +453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1adbb30c24ca4021b4713f4c3329603d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4.41
-  pointCount: 8
+  radius: 2
+  pointCount: 2
   points: []
 --- !u!212 &1302335531
 SpriteRenderer:
@@ -553,22 +555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935d48778aeb4270826a47250d7eb1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &1302335535
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302335527}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
 --- !u!58 &1302335536
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -606,6 +592,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1302335538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302335527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8b3596a51f420187fdec8b06800fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timersList:
+  - name: AwaitForGiveUpSearch
+    current: 3
+    max: 3
+--- !u!114 &1302335539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302335527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec35bdabc4345c68f12de407f2ca073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2263298570718683906, guid: b9b762292c6a97544b26332a294f047d, type: 3}
+  spawnPivot: {fileID: 1302335532}
+  canFire: 1
+  delayTime: 1
+  fireDelegate: {fileID: 11400000, guid: 26b90a948c7706647b8393dde64e6757, type: 2}
 --- !u!1 &1550395742
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +858,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

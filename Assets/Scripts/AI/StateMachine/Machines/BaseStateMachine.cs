@@ -1,4 +1,5 @@
 ﻿using System;
+using AI.StateMachine.Machines;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,11 +13,12 @@ namespace DefaultNamespace.AI.StateMachine
         public CharacterHandler characterHandler;
         public NavMeshAgent agent;
         public PatrolHandler patrolHandler;
-        
+        public TimerHandler timerHandler;
+
         
         [SerializeField]private BaseState _baseState;
         [SerializeField]private BaseState initialState;
-        
+
 
         public event Action<BaseState> StateChangedEvent;
         private void Start()
@@ -25,6 +27,7 @@ namespace DefaultNamespace.AI.StateMachine
             characterHandler = GetComponent<CharacterHandler>();
             agent = GetComponent<NavMeshAgent>();
             patrolHandler = GetComponent<PatrolHandler>();
+            timerHandler = GetComponent<TimerHandler>();
             
             Set(initialState);
         }
@@ -33,8 +36,14 @@ namespace DefaultNamespace.AI.StateMachine
         {
             if (newState == _baseState)
                 return;
+
+            if (_baseState != null)
+                _baseState.LeaveState(this);
             
             _baseState = newState;
+            
+            if (newState != null)
+                newState.EnterState(this);
             
             StateChangedEvent?.Invoke(newState);
         }

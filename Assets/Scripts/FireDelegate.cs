@@ -14,7 +14,7 @@ namespace DefaultNamespace
 
             weaponController.canFire = false;
             var bullet = Object.Instantiate(weaponController.bulletPrefab, weaponController.spawnPivot.position,weaponController.transform.rotation);
-            //bullet.BroadcastMessage("FireInDirection",,SendMessageOptions.RequireReceiver);
+            bullet.BroadcastMessage("Inject",weaponController,SendMessageOptions.RequireReceiver);
             weaponController.StartCoroutine(weaponController.ResetFire());
         }
     }

@@ -8,7 +8,7 @@ namespace DefaultNamespace.AI.StateMachine.StateMachineActions
     {
         public override void Execute(BaseStateMachine machine)
         {
-            machine.agent.ResetPath();
+            //machine.agent.ResetPath();
         }
     }
 }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654142d639bd4d94ab0f302ab7dcd8ed, type: 3}
+  m_Name: WalkToAttack
+  m_EditorClassIdentifier: 
+  decision: {fileID: 11400000, guid: 146bdd9c0bb76514bb4afd473429080f, type: 2}
+  trueState: {fileID: 11400000, guid: ff966521671f5a647af610da6ad38295, type: 2}
+  falseState: {fileID: 11400000, guid: d4e21b25ee04bbe4aac889f5933fc441, type: 2}

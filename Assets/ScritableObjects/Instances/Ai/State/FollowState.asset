@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8070f06550420f9ffc2e2f4e871eeb, type: 3}
   m_Name: FollowState
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: 2984765fb192512459f6d0eae164f24d, type: 2}
+  transitions:
+  - {fileID: 11400000, guid: 7cba1dd358e1a954f9f4691101449662, type: 2}
+  - {fileID: 11400000, guid: 709e4e5d398536d46a53f1dafc4cc7a2, type: 2}
+  enterStateActions: []
+  leaveStateActions: []

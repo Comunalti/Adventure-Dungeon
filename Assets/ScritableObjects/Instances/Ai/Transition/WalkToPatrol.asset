@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654142d639bd4d94ab0f302ab7dcd8ed, type: 3}
   m_Name: WalkToPatrol
   m_EditorClassIdentifier: 
-  decision: {fileID: 11400000, guid: 052f1de212146a64193e190660205e95, type: 2}
+  decision: {fileID: 11400000, guid: beff24c70625a0347b77cea6fa9acda3, type: 2}
   trueState: {fileID: 11400000, guid: 0a6e34718cd245a4d9fa5f8119ca71ac, type: 2}
   falseState: {fileID: 11400000, guid: d4e21b25ee04bbe4aac889f5933fc441, type: 2}

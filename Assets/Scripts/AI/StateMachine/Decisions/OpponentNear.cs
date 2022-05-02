@@ -8,9 +8,10 @@ namespace DefaultNamespace.AI.StateMachine.Decisions
         public float distanceLimit;
         public override bool Decide(BaseStateMachine stateMachine)
         {
-            if (stateMachine.targetHandler.HasFirstValue())
+            var opponent = stateMachine.targetHandler.GetClosestOpponent();
+            if (opponent != null)
             {
-                float distance = stateMachine.targetHandler.GetFirstOpponentDistance();
+                float distance = stateMachine.targetHandler.GetDistance(opponent);
                 return distance <= distanceLimit;
             }
             else

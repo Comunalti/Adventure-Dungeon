@@ -1,22 +1,15 @@
-﻿// namespace DefaultNamespace.AI.StateMachine.Decisions
-// {
-//     public class CanSeeOpponent : Decision
-//     {
-//         public override bool Decide(BaseStateMachine stateMachine)
-//         {
-//             var opponent = stateMachine.targetHandler.LockOpponent();
-//
-//             var position = stateMachine.characterHandler.GetPosition();
-//
-//             var opponentPosition = opponent.characterHandler.GetPosition();
-//
-//             var a = opponentPosition - position;
-//
-//             var distance = a.magnitude;
-//             var direction = a.normalize;
-//             
-//             
-//
-//         }
-//     }
-// }
+﻿using UnityEngine;
+using UnityEngine.AI;
+
+namespace DefaultNamespace.AI.StateMachine.Decisions
+{
+    [CreateAssetMenu(menuName = "State Machine/Decision/Create CanSeeOpponent", fileName = "CanSeeOpponent", order = 0)]
+    public class CanSeeOpponent : Decision
+    {
+        public override bool Decide(BaseStateMachine stateMachine)
+        {
+            
+            return stateMachine.targetHandler.CanSeeFirstOpponent();
+        }
+    }
+}

@@ -10,6 +10,8 @@ namespace DefaultNamespace
         public float speed = 1;
         public float bulletLifeTime = 10;
         public float dmg = 1;
+
+        [SerializeField] private GameObject owner;
         // public void FireInDirection(Vector3 direction)
         // {
         //     print(direction);
@@ -23,10 +25,18 @@ namespace DefaultNamespace
 
         private void OnTriggerEnter2D(Collider2D col)
         {
+            if (col.gameObject == owner)
+            {
+                return;
+            }
             col.gameObject.BroadcastMessage("RemoveHp",dmg,SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
         }
 
+        public void Inject(SimpleWeaponController simpleWeaponController)
+        {
+            owner = simpleWeaponController.gameObject;
+        }
         public IEnumerator DestroyBullet()
         {
             yield return new WaitForSeconds(bulletLifeTime);

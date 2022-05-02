@@ -9,5 +9,15 @@ namespace DefaultNamespace.AI.StateMachine
         {
             
         }
+
+        public override void LeaveState(BaseStateMachine machine)
+        {
+            
+        }
+
+        public override void EnterState(BaseStateMachine machine)
+        {
+            
+        }
     }
 }

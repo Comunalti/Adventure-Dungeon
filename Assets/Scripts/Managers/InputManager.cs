@@ -28,7 +28,7 @@ namespace Managers
 
         private void OnDestroy()
         {
-            _controlMap.Dispose();
+            _controlMap?.Dispose();
         }
 
         public void OnRightClickAction(InputAction.CallbackContext context)

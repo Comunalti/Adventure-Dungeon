@@ -8,6 +8,9 @@ namespace DefaultNamespace.AI.StateMachine
     {
         public List<StateMachineAction> actions = new List<StateMachineAction>();
         public List<Transition> transitions = new List<Transition>();
+        public List<EnterStateAction> enterStateActions = new List<EnterStateAction>();
+        public List<LeaveStateAction> leaveStateActions = new List<LeaveStateAction>();
+        
         
         public override void Execute(BaseStateMachine machine)
         {
@@ -19,6 +22,22 @@ namespace DefaultNamespace.AI.StateMachine
             foreach (var transition in transitions)
             {
                 transition.Execute(machine);
+            }
+        }
+
+        public override void EnterState(BaseStateMachine machine)
+        {
+            foreach (var enterStateAction in enterStateActions)
+            {
+                enterStateAction.Execute(machine);
+            }
+        }
+
+        public override void LeaveState(BaseStateMachine machine)
+        {
+            foreach (var leaveStateAction in leaveStateActions)
+            {
+                leaveStateAction.Execute(machine);
             }
         }
     }
