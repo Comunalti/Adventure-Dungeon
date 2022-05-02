@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 
 namespace Managers
 {
-    public class InputManager : LazySingleton<InputManager> , ControlMap.IMouseMapActions , ControlMap.IMovimentMapActions
+    public class InputManager : LazySingleton<InputManager> , ControlMap.IMouseMapActions , ControlMap.IMovimentMapActions, ControlMap.IKeyboardMapActions
     {
         public event Action MouseLeftClickEvent;
         public event Action MouseRightClickEvent;
         public event Action MouseMiddleClickEvent;
+        public event Action EPressEvent;
         public event Action<Vector2> MouseMovedEvent;
         public event Action<Vector2> DirectionChangedEvent;
 
@@ -28,7 +29,6 @@ namespace Managers
         {
             _controlMap.Dispose();
         }
-
         public void OnRightClickAction(InputAction.CallbackContext context)
         {
             if (!context.performed)
@@ -70,6 +70,15 @@ namespace Managers
             
             //print("OnDirection");
             DirectionChangedEvent?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        public void OnEPressAction(InputAction.CallbackContext context)
+        {
+            if (!context.performed)
+                return;
+        
+            //print("OnRightClickAction");
+            EPressEvent?.Invoke();
         }
     }
 }

@@ -160,6 +160,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "KeyboardMap",
+            "id": "86e8d7bc-a56f-451d-b33e-02177e76b8cf",
+            "actions": [
+                {
+                    "name": "EPressAction",
+                    "type": "Button",
+                    "id": "454f8ce8-b918-41c9-a5aa-8a9d0baa522c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bd4d1cef-35d9-41d8-8dee-cc6222667e9e",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EPressAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

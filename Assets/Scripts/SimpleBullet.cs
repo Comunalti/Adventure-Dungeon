@@ -27,7 +27,7 @@ namespace DefaultNamespace
             Destroy(gameObject);
         }
 
-        public IEnumerator DestroyBullet()
+        private IEnumerator DestroyBullet()
         {
             yield return new WaitForSeconds(bulletLifeTime);
             if (bulletLifeTime != 0)
