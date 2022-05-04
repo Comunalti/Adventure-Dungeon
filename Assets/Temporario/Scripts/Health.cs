@@ -8,14 +8,17 @@ using UnityEngine.Serialization;
 
 public class Health : MonoBehaviour
 {
-   [SerializeField] private float currentHp = 0;
+   [SerializeField] public float currentHp = 0;
    [SerializeField] private float maxHp = 10;
    public bool isInvincible;
    public bool isDead;
    
    
+   
    public event Action<float> TookDamageEvent;
-   public event Action<DamageParameter> TookElementalDamageEvent; 
+   
+   public event Action<ElementalDamage> TookElementalDamageEvent;
+   
    public event Action<float> HealDamageEvent;
    public event Action DiedEvent;
 
@@ -24,16 +27,23 @@ public class Health : MonoBehaviour
        currentHp = maxHp;
    }
 
-   public void RemoveHp(DamageParameter damageParameter)
+   public void DealElementalDamage(ElementalDamage elementalDamage)
+   {
+       if (elementalDamage != null)
+       { 
+           TookElementalDamageEvent?.Invoke(elementalDamage);
+       }
+       
+   }
+   public void RemoveHp(float damage)
     {
         if (isDead||isInvincible)
         {
             return;
         }
-        
-        currentHp -= damageParameter.damageQuantity;
-        TookDamageEvent?.Invoke(damageParameter.damageQuantity);
-        TookElementalDamageEvent?.Invoke(damageParameter);
+
+        currentHp -= damage;
+        TookDamageEvent?.Invoke(damage);
 
         if (currentHp <= 0)
         {
@@ -41,7 +51,7 @@ public class Health : MonoBehaviour
             isDead = true;
         }
     }
-
+   
     public void HealHp(float quantity)
     {
         if (isDead)

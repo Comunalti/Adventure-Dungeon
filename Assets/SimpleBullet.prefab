@@ -100,8 +100,7 @@ MonoBehaviour:
   speed: 1
   bulletLifeTime: 2
   damageQuantity: 1
-  elementalDamage:
-    nome: 
+  elementalDamage: {fileID: 11400000, guid: 6bd0b2ad91a05274e843c32b1252db83, type: 2}
   owner: {fileID: 0}
 --- !u!58 &2080760263257179605
 CircleCollider2D:

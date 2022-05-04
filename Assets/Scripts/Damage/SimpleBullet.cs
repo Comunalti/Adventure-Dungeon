@@ -29,10 +29,8 @@ namespace Damage
                 return;
             }
 
-            DamageParameter parameter = new DamageParameter();
-            parameter.damageQuantity = damageQuantity;
-            parameter.elementalDamage = elementalDamage;
-            col.gameObject.BroadcastMessage("RemoveHp",parameter,SendMessageOptions.DontRequireReceiver);
+            col.gameObject.BroadcastMessage("RemoveHp",damageQuantity,SendMessageOptions.DontRequireReceiver);
+            col.gameObject.BroadcastMessage("DealElementalDamage",elementalDamage,SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
         }
 

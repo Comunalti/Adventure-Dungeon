@@ -16,7 +16,7 @@ public class NewDash : MonoBehaviour
     [SerializeField] private float invincibilityTime = 1;
     public event Action DashFireEvent;
     public event Action DashFailEvent;
-
+    
     private IEnumerator ResetInvincibility()
     {
         yield return new WaitForSeconds(invincibilityTime);

@@ -739,6 +739,7 @@ GameObject:
   - component: {fileID: 976627074}
   - component: {fileID: 976627075}
   - component: {fileID: 976627076}
+  - component: {fileID: 976627077}
   m_Layer: 0
   m_Name: SimpleWeapon
   m_TagString: Untagged
@@ -829,6 +830,26 @@ MonoBehaviour:
   canFire: 1
   delayTime: 0.1
   fireDelegate: {fileID: 11400000, guid: 8293898af9cfe864483dfa748a3cc32e, type: 2}
+--- !u!114 &976627077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976627073}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ab89b38299415e974353913b53c3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nome: Fire Bullet
+  fireDamageQuantity: 1
+  fireBulletDelay: 1
+  canBullet: 1
+  fireBulletSpeed: 1
+  bulletLifeTime: 10
+  elementalDamage: {fileID: 0}
+  owner: {fileID: 0}
 --- !u!1 &1073335918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,7 +1486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 0}
   dashSpeed: 5
-  direction: {x: 0, y: 0}
   canDash: 1
   dashDelay: 1
   invincibilityTime: 1
