@@ -41,9 +41,9 @@ GameObject:
   - component: {fileID: 6018988922143593038}
   - component: {fileID: 6018988922143593039}
   - component: {fileID: 6018988922143593032}
-  - component: {fileID: 1885658198916036807}
+  - component: {fileID: 8348014786200738973}
   m_Layer: 0
-  m_Name: SimpleWeapon
+  m_Name: OtherWeapon
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,8 +56,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6018988922143593037}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.025, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6018988921970018998}
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 44ce9ef259ae9b947b26787d97d5d36b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efef70d3f3a37d445a3e2bd6a3465269, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,9 +130,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2263298570718683906, guid: b9b762292c6a97544b26332a294f047d, type: 3}
   spawnPivot: {fileID: 6018988921970018998}
   canFire: 1
-  delayTime: 0.1
-  fireDelegate: {fileID: 11400000, guid: 8293898af9cfe864483dfa748a3cc32e, type: 2}
---- !u!114 &1885658198916036807
+  delayTime: 2
+  fireDelegate: {fileID: 11400000, guid: c16a981409a931b45b91423f49e215db, type: 2}
+--- !u!114 &8348014786200738973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

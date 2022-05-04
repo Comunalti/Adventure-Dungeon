@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 
 namespace Managers
 {
-    public class InputManager : LazySingleton<InputManager> , ControlMap.IMouseMapActions , ControlMap.IMovimentMapActions
+    public class InputManager : LazySingleton<InputManager> , ControlMap.IMouseMapActions , ControlMap.IMovimentMapActions, ControlMap.IKeyboardMapActions
     {
         public event Action MouseLeftClickEvent;
         public event Action MouseRightClickEvent;
         public event Action MouseMiddleClickEvent;
+        public event Action EPressEvent;
         public event Action<Vector2> MouseMovedEvent;
         public event Action<Vector2> DirectionChangedEvent;
 
@@ -22,6 +23,7 @@ namespace Managers
             _controlMap = new ControlMap();
             _controlMap.MouseMap.SetCallbacks(this);
             _controlMap.MovimentMap.SetCallbacks(this);
+            _controlMap.KeyboardMap.SetCallbacks(this);
             _controlMap.Enable();
         }
 
@@ -79,6 +81,17 @@ namespace Managers
             if (context.ReadValueAsButton() && context.performed)
             {
                 DashEvent?.Invoke();
+                
+            }
+        }
+
+        public void OnEPressAction(InputAction.CallbackContext context)
+        {
+            // print("antes do invoke");
+            if (context.ReadValueAsButton() && context.performed)
+            {
+                // print("invoke");
+                EPressEvent?.Invoke();
                 
             }
         }
