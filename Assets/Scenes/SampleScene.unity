@@ -739,7 +739,6 @@ GameObject:
   - component: {fileID: 976627074}
   - component: {fileID: 976627075}
   - component: {fileID: 976627076}
-  - component: {fileID: 976627077}
   m_Layer: 0
   m_Name: SimpleWeapon
   m_TagString: Untagged
@@ -830,26 +829,6 @@ MonoBehaviour:
   canFire: 1
   delayTime: 0.1
   fireDelegate: {fileID: 11400000, guid: 8293898af9cfe864483dfa748a3cc32e, type: 2}
---- !u!114 &976627077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976627073}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ab89b38299415e974353913b53c3fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nome: Fire Bullet
-  fireDamageQuantity: 1
-  fireBulletDelay: 1
-  canBullet: 1
-  fireBulletSpeed: 1
-  bulletLifeTime: 10
-  elementalDamage: {fileID: 0}
-  owner: {fileID: 0}
 --- !u!1 &1073335918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,6 +1415,8 @@ GameObject:
   - component: {fileID: 2081287990}
   - component: {fileID: 2081287989}
   - component: {fileID: 2081287991}
+  - component: {fileID: 2081287993}
+  - component: {fileID: 2081287992}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1484,7 +1465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6efd5e39a961eb243af7fb47979ced78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
+  health: {fileID: 2081287992}
   dashSpeed: 5
   canDash: 1
   dashDelay: 1
@@ -1536,6 +1517,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12436098, y: 0.18301621}
   m_EdgeRadius: 0
+--- !u!114 &2081287992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081287986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74219fd66e127bd40bd0495ce96d3856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHp: 0
+  maxHp: 10
+  isInvincible: 0
+  isDead: 0
+--- !u!114 &2081287993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081287986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55e55c07a0c42579c966d2210067c56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 2081287992}
+  damageString: FireDamage
+  bulletFireDamage: 0
+  isOnFire: 0
+  fireDelay: 0.1
+  damage: 0
 --- !u!1001 &612085552087365264
 PrefabInstance:
   m_ObjectHideFlags: 0

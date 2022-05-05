@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ab89b38299415e974353913b53c3fe, type: 3}
   m_Name: FireDamage
   m_EditorClassIdentifier: 
-  nome: 
+  nome: FireDamage
