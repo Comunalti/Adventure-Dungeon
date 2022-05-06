@@ -145,5 +145,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivo: {fileID: 0}
-  character: {fileID: 3408902636906078119, guid: c083ae71ea8def64dae1d0b56cf8a13d, type: 3}
-  canvas: {fileID: 5851219843327734076, guid: d3308a42f286f9a41982a98b2444a3cb, type: 3}
+  character: {fileID: 0}
+  canvas: {fileID: 0}

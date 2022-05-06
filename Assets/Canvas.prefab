@@ -217,10 +217,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 8172106711563412269, guid: b92c23a8081c7ed4d93f9251b3e4924f, type: 3}
+  dropPrefab: {fileID: 0}
   hotbar: {fileID: 5851219843464697706}
   removableSlot: {fileID: 0}
   rectTransform: {fileID: 5851219843464697707}
-  slots3: 1
+  pivo: {fileID: 0}
+  has3Slots: 1
 --- !u!1001 &5851219843555495527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -518,12 +520,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7936193906230366536, guid: b92c23a8081c7ed4d93f9251b3e4924f, type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7936193906230366536, guid: b92c23a8081c7ed4d93f9251b3e4924f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e2032755aa998c24c95b415e833158b3, type: 3}
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7936193906230366536, guid: b92c23a8081c7ed4d93f9251b3e4924f, type: 3}
       propertyPath: m_PreserveAspect
       value: 1

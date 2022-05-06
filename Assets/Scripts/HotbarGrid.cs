@@ -15,6 +15,12 @@ public class HotbarGrid : MonoBehaviour
     public RectTransform rectTransform;
     public GameObject pivo;
     public bool has3Slots = true;
+    public GunFunctions gunFunctions;
+
+    private void Start()
+    {
+        gunFunctions.SelectSlotImage(pivo.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
+    }
 
     private void ChangeSlots()
     {

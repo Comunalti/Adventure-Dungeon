@@ -13,6 +13,21 @@ public class GunDropped : MonoBehaviour
     public Collider2D playerCollider;
     public HotbarGrid hotbarGrid;
 
+    private void Start()
+    {
+        if (!pivo)
+        {
+            pivo = GameObject.Find("Pivo");
+        }
+
+        if (!hotbarGrid)
+        {
+            hotbarGrid = GameObject.Find("HotbarFrame").GetComponent<HotbarGrid>();
+        }
+
+        playerCollider = pivo.transform.parent.GetComponent<Collider2D>();
+    }
+
     private void AddGunToSlot()
     {
         if(hotbarGrid.has3Slots)
@@ -24,10 +39,10 @@ public class GunDropped : MonoBehaviour
             if (pivo.transform.childCount >= 4) return;
         }
         var gun = Instantiate(gunPrefab, pivo.transform);
-        gun.transform.position = new Vector3(0.1f, 0.25f, -1);
+        gun.transform.localPosition = new Vector3(0.1f, 0.025f, -1);
         gun.transform.rotation = Quaternion.identity;
-        gun.BroadcastMessage("SelectThisGun",SendMessageOptions.DontRequireReceiver);
-        // gun.BroadcastMessage("SelectSlotImage",gun.GetComponent<SpriteRenderer>().sprite,SendMessageOptions.DontRequireReceiver);
+        gun.GetComponent<GunFunctions>().SelectThisGun();
+        gun.GetComponent<GunFunctions>().SelectSlotImage(GetComponent<SpriteRenderer>().sprite);
         Destroy(gameObject);
     }
 
