@@ -14,11 +14,15 @@ namespace Damage
         [SerializeField] private float fireDelay = 0.1f;
         public float damage;
         
+        public event Action FireEffectStartEvent;
+        
+        public event Action FireEffectEndEvent;
 
         private IEnumerator ResetFire()
         {
             yield return new WaitForSeconds(fireDelay);
-            isOnFire = true;
+            isOnFire = false;
+            FireEffectEndEvent?.Invoke();
         }
 
         private void Update()
@@ -47,6 +51,7 @@ namespace Damage
             {
                 isOnFire = true;
                 StartCoroutine(ResetFire());
+                FireEffectStartEvent?.Invoke();
             }
             
         }
