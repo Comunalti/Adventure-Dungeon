@@ -16,12 +16,12 @@ public class GunDropped : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        InputManager.Instance.EPressEvent += addGunToSlot;
+        //InputManager.Instance.EPressEvent += addGunToSlot;
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        InputManager.Instance.EPressEvent -= addGunToSlot;
+        //InputManager.Instance.EPressEvent -= addGunToSlot;
     }
 
     private GameObject getAvailableSlot()
