@@ -41,13 +41,14 @@ GameObject:
   - component: {fileID: 6018988922143593038}
   - component: {fileID: 6018988922143593039}
   - component: {fileID: 6018988922143593032}
+  - component: {fileID: 1885658198916036807}
   m_Layer: 0
   m_Name: SimpleWeapon
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6018988922143593038
 Transform:
   m_ObjectHideFlags: 0
@@ -131,3 +132,17 @@ MonoBehaviour:
   canFire: 1
   delayTime: 0.1
   fireDelegate: {fileID: 11400000, guid: 8293898af9cfe864483dfa748a3cc32e, type: 2}
+--- !u!114 &1885658198916036807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018988922143593037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f607b50326dde44884b7f0c20b1152d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivo: {fileID: 0}
+  canvas: {fileID: 5851219843327734076, guid: d3308a42f286f9a41982a98b2444a3cb, type: 3}

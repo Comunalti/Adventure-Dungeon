@@ -16,7 +16,7 @@ namespace DefaultNamespace
         public float delayTime = 1;
         public FireDelegate fireDelegate;
 
-        public void CallFire() 
+        private void CallFire() 
         {
             fireDelegate.Fire(this);
         }

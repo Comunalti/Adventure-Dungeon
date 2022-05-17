@@ -202,6 +202,34 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""KeyboardMap"",
+            ""id"": ""86e8d7bc-a56f-451d-b33e-02177e76b8cf"",
+            ""actions"": [
+                {
+                    ""name"": ""EPressAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""454f8ce8-b918-41c9-a5aa-8a9d0baa522c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""bd4d1cef-35d9-41d8-8dee-cc6222667e9e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EPressAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -216,6 +244,9 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         m_MovimentMap = asset.FindActionMap("MovimentMap", throwIfNotFound: true);
         m_MovimentMap_Direction = m_MovimentMap.FindAction("Direction", throwIfNotFound: true);
         m_MovimentMap_DashAction = m_MovimentMap.FindAction("DashAction", throwIfNotFound: true);
+        // KeyboardMap
+        m_KeyboardMap = asset.FindActionMap("KeyboardMap", throwIfNotFound: true);
+        m_KeyboardMap_EPressAction = m_KeyboardMap.FindAction("EPressAction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -369,6 +400,39 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         }
     }
     public MovimentMapActions @MovimentMap => new MovimentMapActions(this);
+
+    // KeyboardMap
+    private readonly InputActionMap m_KeyboardMap;
+    private IKeyboardMapActions m_KeyboardMapActionsCallbackInterface;
+    private readonly InputAction m_KeyboardMap_EPressAction;
+    public struct KeyboardMapActions
+    {
+        private @ControlMap m_Wrapper;
+        public KeyboardMapActions(@ControlMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @EPressAction => m_Wrapper.m_KeyboardMap_EPressAction;
+        public InputActionMap Get() { return m_Wrapper.m_KeyboardMap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(KeyboardMapActions set) { return set.Get(); }
+        public void SetCallbacks(IKeyboardMapActions instance)
+        {
+            if (m_Wrapper.m_KeyboardMapActionsCallbackInterface != null)
+            {
+                @EPressAction.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnEPressAction;
+                @EPressAction.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnEPressAction;
+                @EPressAction.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnEPressAction;
+            }
+            m_Wrapper.m_KeyboardMapActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @EPressAction.started += instance.OnEPressAction;
+                @EPressAction.performed += instance.OnEPressAction;
+                @EPressAction.canceled += instance.OnEPressAction;
+            }
+        }
+    }
+    public KeyboardMapActions @KeyboardMap => new KeyboardMapActions(this);
     public interface IMouseMapActions
     {
         void OnRightClickAction(InputAction.CallbackContext context);
@@ -380,5 +444,9 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
     {
         void OnDirection(InputAction.CallbackContext context);
         void OnDashAction(InputAction.CallbackContext context);
+    }
+    public interface IKeyboardMapActions
+    {
+        void OnEPressAction(InputAction.CallbackContext context);
     }
 }
