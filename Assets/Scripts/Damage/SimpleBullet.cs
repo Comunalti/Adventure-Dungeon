@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Damage
 {
     public class SimpleBullet : MonoBehaviour
     {
         //public Vector3 _direction;
         public float speed = 1;
         public float bulletLifeTime = 10;
-        public float dmg = 1;
-
+        public float damageQuantity = 1;
+        public ElementalDamage elementalDamage;
         [SerializeField] private GameObject owner;
         // public void FireInDirection(Vector3 direction)
         // {
         //     print(direction);
         //     _direction = direction;
         // }
-
         private void Update()
         {
             transform.position = transform.position + transform.right* (Time.deltaTime * speed);
@@ -29,7 +28,9 @@ namespace DefaultNamespace
             {
                 return;
             }
-            col.gameObject.BroadcastMessage("RemoveHp",dmg,SendMessageOptions.DontRequireReceiver);
+
+            col.gameObject.BroadcastMessage("RemoveHp",damageQuantity,SendMessageOptions.DontRequireReceiver);
+            col.gameObject.BroadcastMessage("DealElementalDamage",elementalDamage,SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
         }
 

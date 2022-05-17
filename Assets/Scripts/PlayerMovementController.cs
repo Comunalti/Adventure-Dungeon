@@ -5,8 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovementController : MonoBehaviour
 {
+
     public MovementCommand movementCommand;
     private Vector2 _direction;
+    public bool isOnIce;
+    [SerializeField] private NormalMovementCommand _normalMovementCommand;
 
     private Rigidbody2D _rigidbody2D;
     private void Start()
@@ -38,3 +41,4 @@ public class PlayerMovementController : MonoBehaviour
     }
 
 }
+
