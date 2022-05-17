@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class HotbarSlot : MonoBehaviour, IPointerClickHandler
+    public class HotbarSlot : MonoBehaviour, ISelectHandler, IDeselectHandler
     {
         private Image _image;
         private Button _button;
@@ -26,9 +26,10 @@ namespace UI
             _pivot = pivot;
         }
 
-        public void SetItem(HotbarItem hotbarItem,bool sendMessage = true)
+        public HotbarItem SetItem(HotbarItem hotbarItem,bool sendMessage = true)
         {
             print("socorro");
+            var old = _hotbarItem;
             _hotbarItem = hotbarItem;
             if (sendMessage)
             {
@@ -44,17 +45,32 @@ namespace UI
             {
                 weapon = hotbarItem.Create(_pivot);
             }
+            
+            EventSystem.current.SetSelectedGameObject(this.gameObject);
+            return old;
         }
 
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            foreach (Transform pivotChild in _pivot.transform)
-            {
-                pivotChild.gameObject.SetActive(false);
-            }
+        // public void OnPointerClick(PointerEventData eventData)
+        // {
+        //     foreach (Transform pivotChild in _pivot.transform)
+        //     {
+        //         pivotChild.gameObject.SetActive(false);
+        //     }
+        //
+        //     if (weapon)
+        //         weapon.SetActive(true);
+        // }
 
-            if (weapon)
+        public void OnSelect(BaseEventData eventData)
+        {
+            if (weapon != null)
                 weapon.SetActive(true);
+        }
+
+        public void OnDeselect(BaseEventData eventData)
+        {
+            if (weapon != null)
+                weapon.SetActive(false);
         }
     }
 }

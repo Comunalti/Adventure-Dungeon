@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ namespace UI
     
         [SerializeField] private List<HotbarSlot> _frames = new List<HotbarSlot>();
         [SerializeField] private List<HotbarItem> _hotbarItems = new List<HotbarItem>();
+        private event Action<int> QuantityChangedEvent;
 
 
         private void Start()
@@ -84,6 +86,19 @@ namespace UI
             }
         }
 
+        public bool AddItem(HotbarItem hotbarItem)
+        {
+            if (_currentCapacity <= _hotbarItems.Count)
+            {
+                return false;
+            }
+            _frames[_hotbarItems.Count].SetItem(hotbarItem);
+            _hotbarItems.Add(hotbarItem);
+            
+            QuantityChangedEvent?.Invoke(_hotbarItems.Count);
+            return true;
+        }
+        
         private void Drop(List<HotbarItem> range)
         {
             foreach (var hotbarItem in range)
