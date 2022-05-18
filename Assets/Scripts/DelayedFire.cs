@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
 {
@@ -11,6 +13,7 @@ namespace DefaultNamespace
         public int bullets = 2;
         public override void Fire(SimpleWeaponController weaponController)
         {
+            throw new NotImplementedException("manutenção, terminar isso aqui");
             if (!weaponController.canFire)
             {
                 return;

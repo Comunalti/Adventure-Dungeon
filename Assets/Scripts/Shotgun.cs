@@ -1,6 +1,8 @@
+using System;
 using Damage;
 using Unity.Mathematics;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
 {
@@ -15,6 +17,7 @@ namespace DefaultNamespace
         public float minSpeed = 0.15f;
         public override void Fire(SimpleWeaponController weaponController)
         {
+            throw new NotImplementedException("manutenção, terminar isso aqui");
             if (!weaponController.canFire)
             {
                 return;

@@ -12,11 +12,7 @@ namespace Damage
         public float damageQuantity = 1;
         public ElementalDamage elementalDamage;
         [SerializeField] private GameObject owner;
-        // public void FireInDirection(Vector3 direction)
-        // {
-        //     print(direction);
-        //     _direction = direction;
-        // }
+        
         private void Update()
         {
             transform.position = transform.position + transform.right* (Time.deltaTime * speed);
@@ -25,6 +21,12 @@ namespace Damage
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (col.gameObject == owner)
+            {
+                return;
+            }
+
+            var simpleBullet = col.GetComponent<SimpleBullet>();
+            if (simpleBullet && simpleBullet.owner == owner)
             {
                 return;
             }

@@ -1,5 +1,7 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
 {
@@ -12,6 +14,7 @@ namespace DefaultNamespace
         public float scale = 45;
         public override void Fire(SimpleWeaponController weaponController)
         {
+            throw new NotImplementedException("manutenção, terminar isso aqui");
             if (!weaponController.canFire)
             {
                 return;

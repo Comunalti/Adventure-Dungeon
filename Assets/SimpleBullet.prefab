@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1946a018319b465ab89e48ca2a1a5187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  bulletLifeTime: 2
+  speed: 4
+  bulletLifeTime: 5
   damageQuantity: 1
   elementalDamage: {fileID: 11400000, guid: 6bd0b2ad91a05274e843c32b1252db83, type: 2}
   owner: {fileID: 0}
@@ -109,7 +109,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2263298570718683906}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -117,7 +117,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.05, y: 0}
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.13
 --- !u!50 &-4008571728703920739
 Rigidbody2D:
   serializedVersion: 4

@@ -1,3 +1,4 @@
+using Damage;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -13,9 +14,15 @@ namespace DefaultNamespace
             }
 
             weaponController.canFire = false;
-            var bullet = Object.Instantiate(weaponController.bulletPrefab, weaponController.spawnPivot.position,weaponController.transform.rotation);
-            bullet.BroadcastMessage("Inject",weaponController,SendMessageOptions.RequireReceiver);
+            Shoot(weaponController.bulletPrefab,weaponController);
+            
             weaponController.StartCoroutine(weaponController.ResetFire());
+        }
+
+        protected void Shoot(GameObject bulletPrefab,SimpleWeaponController weaponController)
+        {
+            var bullet = Object.Instantiate(bulletPrefab, weaponController.spawnPivot.position,weaponController.transform.rotation);
+            bullet.GetComponent<SimpleBullet>().Inject(weaponController);
         }
     }
 }
