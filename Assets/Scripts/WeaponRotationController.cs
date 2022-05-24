@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class WeaponRotationController : MonoBehaviour
+public class WeaponRotationController : MonoBehaviour
     {
         public GameObject character;
         public MousePointerController mousePointerController;
@@ -25,9 +25,14 @@ namespace DefaultNamespace
 
         private void Update()
         {
-            var aimDirection = mousePointerPosition- character.transform.position;
-
-            transform.rotation = Quaternion.Euler(0,0,Mathf.Atan2(aimDirection.y, aimDirection.x)*Mathf.Rad2Deg);
+            var aimDirection = (Vector2) (mousePointerPosition - character.transform.position);
+            float angleY = 0f;
+            if (aimDirection.x < 0)
+            {
+                angleY = 180f;
+                aimDirection.x = -aimDirection.x;
+            }
+            transform.rotation = Quaternion.Euler(0,angleY,Mathf.Atan2(aimDirection.y, aimDirection.x)*Mathf.Rad2Deg);
         }
     }
 }

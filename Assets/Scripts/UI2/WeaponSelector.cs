@@ -29,6 +29,10 @@ namespace DefaultNamespace.UI2
         private void OnWeaponChanged(Weapon weapon, GameObject weaponInstance)
         {
             _weaponInstance = weaponInstance;
+            if (weaponInstance == null)
+            {
+                OnToggleChanged(false);
+            }
         }
 
 
