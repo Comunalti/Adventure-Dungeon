@@ -12,6 +12,7 @@ namespace DefaultNamespace.UI2.Collection
         public GameObject mainFrame;
 
         private WeaponCollector _cacheCollector;
+        private NumberSlotChanger _numberSlotChanger;
         public event Action<Weapon> WeaponChangedEvent;
 
         public void SetWeapon(Weapon weapon)
@@ -22,9 +23,11 @@ namespace DefaultNamespace.UI2.Collection
         private void OnTriggerEnter2D(Collider2D other)
         {
             _cacheCollector = other.GetComponentInChildren<WeaponCollector>();
+            _numberSlotChanger = mainFrame.GetComponent<NumberSlotChanger>();
             if (_cacheCollector)
             {
                 var collected = _cacheCollector.Collect(this);
+                _numberSlotChanger.SetSlotNumber(mainFrame.transform.childCount + 1);
                 if (collected)
                 {
                     Destroy(gameObject);

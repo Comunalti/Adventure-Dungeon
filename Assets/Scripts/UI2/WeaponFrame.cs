@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DefaultNamespace.UI2
 {
@@ -18,6 +19,8 @@ namespace DefaultNamespace.UI2
         private void Awake()
         {
             weaponFactory = FindObjectOfType<WeaponFactory>();
+            weaponCollectableFactory = FindObjectOfType<WeaponCollectableFactory>();
+            gameObject.GetComponent<Toggle>().group = gameObject.transform.parent.GetComponent<ToggleGroup>();
         }
 
         public void SetWeapon(Weapon weapon)
