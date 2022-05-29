@@ -230,6 +230,34 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""InteractionMap"",
+            ""id"": ""1efbcc72-bb68-4a79-9c21-28857407164e"",
+            ""actions"": [
+                {
+                    ""name"": ""EscapeButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a4a4357-d8b8-446d-82fd-7ff374444349"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""31b59489-2bff-4654-ad54-4b4c014f1dd6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EscapeButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -247,6 +275,9 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         // KeyboardMap
         m_KeyboardMap = asset.FindActionMap("KeyboardMap", throwIfNotFound: true);
         m_KeyboardMap_EPressAction = m_KeyboardMap.FindAction("EPressAction", throwIfNotFound: true);
+        // InteractionMap
+        m_InteractionMap = asset.FindActionMap("InteractionMap", throwIfNotFound: true);
+        m_InteractionMap_EscapeButton = m_InteractionMap.FindAction("EscapeButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -433,6 +464,39 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         }
     }
     public KeyboardMapActions @KeyboardMap => new KeyboardMapActions(this);
+
+    // InteractionMap
+    private readonly InputActionMap m_InteractionMap;
+    private IInteractionMapActions m_InteractionMapActionsCallbackInterface;
+    private readonly InputAction m_InteractionMap_EscapeButton;
+    public struct InteractionMapActions
+    {
+        private @ControlMap m_Wrapper;
+        public InteractionMapActions(@ControlMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @EscapeButton => m_Wrapper.m_InteractionMap_EscapeButton;
+        public InputActionMap Get() { return m_Wrapper.m_InteractionMap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InteractionMapActions set) { return set.Get(); }
+        public void SetCallbacks(IInteractionMapActions instance)
+        {
+            if (m_Wrapper.m_InteractionMapActionsCallbackInterface != null)
+            {
+                @EscapeButton.started -= m_Wrapper.m_InteractionMapActionsCallbackInterface.OnEscapeButton;
+                @EscapeButton.performed -= m_Wrapper.m_InteractionMapActionsCallbackInterface.OnEscapeButton;
+                @EscapeButton.canceled -= m_Wrapper.m_InteractionMapActionsCallbackInterface.OnEscapeButton;
+            }
+            m_Wrapper.m_InteractionMapActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @EscapeButton.started += instance.OnEscapeButton;
+                @EscapeButton.performed += instance.OnEscapeButton;
+                @EscapeButton.canceled += instance.OnEscapeButton;
+            }
+        }
+    }
+    public InteractionMapActions @InteractionMap => new InteractionMapActions(this);
     public interface IMouseMapActions
     {
         void OnRightClickAction(InputAction.CallbackContext context);
@@ -448,5 +512,9 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
     public interface IKeyboardMapActions
     {
         void OnEPressAction(InputAction.CallbackContext context);
+    }
+    public interface IInteractionMapActions
+    {
+        void OnEscapeButton(InputAction.CallbackContext context);
     }
 }

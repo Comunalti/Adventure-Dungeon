@@ -9,6 +9,7 @@ namespace Managers
     {
         public event Action MouseLeftClickEvent;
         public event Action MouseRightClickEvent;
+        public event Action MouseRightClickEndedEvent;
         public event Action MouseMiddleClickEvent;
         public event Action EPressEvent;
         public event Action<Vector2> MouseMovedEvent;
@@ -35,11 +36,14 @@ namespace Managers
 
         public void OnRightClickAction(InputAction.CallbackContext context)
         {
-            if (!context.performed)
-                return;
-        
+            if (context.performed)
+                MouseRightClickEvent?.Invoke();
+            else if (context.canceled)
+            {
+                MouseRightClickEndedEvent?.Invoke();
+            }
             //print("OnRightClickAction");
-            MouseRightClickEvent?.Invoke();
+            
         }
 
         public void OnLeftClickAction(InputAction.CallbackContext context)

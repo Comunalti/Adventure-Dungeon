@@ -23,3 +23,4 @@ public class HealthUI : MonoBehaviour
         slider.value = health.GetPercentage();
     }
 }
+
