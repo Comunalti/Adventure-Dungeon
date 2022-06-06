@@ -6,6 +6,7 @@ namespace DefaultNamespace.UI2
     {
         public GameObject Create(Weapon weapon)
         {
+            if (weapon == null) return null;
             return Instantiate(weapon.prefab, transform);
         }
     }

@@ -67,4 +67,10 @@ public class Health : MonoBehaviour
     {
         return currentHp / maxHp;
     }
+
+    [ContextMenu("SendEvent")]
+    public void SendEvent()
+    {
+        TookDamageEvent?.Invoke(0);
+    }
 }

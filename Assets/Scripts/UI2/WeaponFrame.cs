@@ -24,7 +24,7 @@ namespace DefaultNamespace.UI2
         {
             if (_weaponInstance)
             {
-                weaponCollectableFactory.Create(_currentWeapon);
+                    weaponCollectableFactory.Create(_currentWeapon);
                 Destroy(_weaponInstance);
             }
             _currentWeapon = weapon;
@@ -34,12 +34,13 @@ namespace DefaultNamespace.UI2
 
         public void RemoveWeapon()
         {
-            if (_weaponInstance)
-            {
-                Destroy(_weaponInstance);
-            }
-            _currentWeapon = null;
-            WeaponChangedEvent?.Invoke(null,null);
+            // if (_weaponInstance)
+            // {
+            //     Destroy(_weaponInstance);
+            // }
+            // _currentWeapon = null;
+            // WeaponChangedEvent?.Invoke(null,null);
+            SetWeapon(null);
         }
 
         private void OnDestroy()

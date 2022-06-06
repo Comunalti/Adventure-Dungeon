@@ -18,9 +18,9 @@ public class HealthUI : MonoBehaviour
         health.HealDamageEvent -= RefreshUI;
     }
     
-    
     private void RefreshUI(float dmg)
     {
         slider.value = health.GetPercentage();
     }
 }
+
