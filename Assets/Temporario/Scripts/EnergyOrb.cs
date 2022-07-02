@@ -14,7 +14,7 @@ public class EnergyOrb : MonoBehaviour
 
         if (energy != null)
         {
-            energy.EnergyRecharge(quantity);
+            energy.Add(quantity);
             Destroy(gameObject);
         }
     }

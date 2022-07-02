@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 21649272656884877}
   - component: {fileID: 4866208903195522890}
   - component: {fileID: 8262750497708786312}
-  - component: {fileID: 4174453450692716187}
-  - component: {fileID: 5968306451296531033}
+  - component: {fileID: 1987831825}
+  - component: {fileID: 615731911268691976}
   m_Layer: 0
   m_Name: Bau
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2918261359518890461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 7345204309886377983}
   m_Father: {fileID: 0}
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &4174453450692716187
+--- !u!114 &1987831825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,26 +121,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 2918261359518890461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74219fd66e127bd40bd0495ce96d3856, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b383fb84d7547fd855421d34600441d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHp: 0
-  maxHp: 10
-  isDead: 0
---- !u!114 &5968306451296531033
-MonoBehaviour:
+  spawnEffectPrefab: {fileID: 0}
+  damage: 1
+  speed: 2
+  lifeTime: 10
+  elementalDamage: {fileID: 0}
+  owner: {fileID: 0}
+--- !u!50 &615731911268691976
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2918261359518890461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45fab333aa95496080cfa11d2812a073, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 4174453450692716187}
-  slider: {fileID: 539895972386099183}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5236312248043892805
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,14 +8,22 @@ namespace Managers
     public class InputManager : LazySingleton<InputManager> , ControlMap.IMouseMapActions , ControlMap.IMovimentMapActions, ControlMap.IKeyboardMapActions
     {
         public event Action MouseLeftClickEvent;
+        public event Action MouseLeftClickEndedEvent;
+
         public event Action MouseRightClickEvent;
         public event Action MouseRightClickEndedEvent;
         public event Action MouseMiddleClickEvent;
         public event Action EPressEvent;
+        public event Action QPressEvent;
+        public event Action RPressEvent;
+        public event Action FPressEvent;
+        public event Action<int> NumberPressEvent;
         public event Action<Vector2> MouseMovedEvent;
         public event Action<Vector2> DirectionChangedEvent;
 
         public event Action DashEvent;
+        public event Action DashStopEvent;
+
 
         private ControlMap _controlMap;
 
@@ -48,11 +56,15 @@ namespace Managers
 
         public void OnLeftClickAction(InputAction.CallbackContext context)
         {
-            if (!context.performed)
-                return;
-        
-            //print("OnLeftClickAction");
-            MouseLeftClickEvent?.Invoke();
+           
+            if (context.performed)
+            {
+                MouseLeftClickEvent?.Invoke();
+            }
+            else if (context.canceled)
+            {
+                MouseLeftClickEndedEvent?.Invoke();
+            }
         }
 
         public void OnMiddleClickAction(InputAction.CallbackContext context)
@@ -85,19 +97,53 @@ namespace Managers
             if (context.ReadValueAsButton() && context.performed)
             {
                 DashEvent?.Invoke();
-                
+            }else if (context.canceled)
+            {
+                DashStopEvent?.Invoke();
             }
         }
 
-        public void OnEPressAction(InputAction.CallbackContext context)
+        
+
+        public void OnNumberPressed(InputAction.CallbackContext context)
         {
-            // print("antes do invoke");
-            if (context.ReadValueAsButton() && context.performed)
+            if (context.performed)
             {
-                // print("invoke");
-                EPressEvent?.Invoke();
-                
+                var value = int.Parse(context.control.name);
+                NumberPressEvent?.Invoke(value);
             }
         }
+        public void OnEPressAction(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton() && context.performed)
+            {
+                EPressEvent?.Invoke();
+            }
+        }
+
+        public void OnQPressAction(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton() && context.performed)
+            {
+                QPressEvent?.Invoke();
+            }        
+        }
+
+        public void OnRPressAction(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton() && context.performed)
+            {
+                RPressEvent?.Invoke();
+            }        
+        }
+
+        public void OnFPressAction(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton() && context.performed)
+            {
+               FPressEvent?.Invoke();
+            }        
+        }
+
     }
 }

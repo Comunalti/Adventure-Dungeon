@@ -215,6 +215,42 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NumberPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""a7bd7c48-31ed-41fd-85e1-996816823e2e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""QPressAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""15a75c94-5776-4707-990e-36e0fa62093e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RPressAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""50b99dc7-65dc-4b79-ab35-9fbbf2eba3c4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FPressAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""24be09c7-0a54-4e3f-847c-d61d015397e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -226,6 +262,149 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""EPressAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bca7edc5-e195-4c72-b480-33ef9cff0268"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7453b5ef-1e64-4b18-b959-5d915b689b05"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a845f643-97bb-4ae7-857d-6cbcfffe2d92"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92733b60-f0cb-4906-b41f-7b30e4263ebe"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22653946-ae83-4a76-b0cb-af6a51c0ddc4"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f922e34d-18d7-4b83-a75d-f6494b1e463a"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4ecb1d4-b79f-4414-bf4c-0817b30e8ea3"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""776a7aa4-ed23-42a8-bf02-5cf6a522943f"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9703bf23-ebb7-46f0-a700-de3a7ceb3e65"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68ebe366-e9ed-42a2-961b-8cab07895077"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NumberPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""adca1820-3dc4-4d37-9eb5-a940d1f13270"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""QPressAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be1e1c8f-caa1-4c08-a379-8e1f587f97c7"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RPressAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11428c9b-3c73-4394-9a70-f7dbd9a20d9e"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FPressAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -275,6 +454,10 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         // KeyboardMap
         m_KeyboardMap = asset.FindActionMap("KeyboardMap", throwIfNotFound: true);
         m_KeyboardMap_EPressAction = m_KeyboardMap.FindAction("EPressAction", throwIfNotFound: true);
+        m_KeyboardMap_NumberPressed = m_KeyboardMap.FindAction("NumberPressed", throwIfNotFound: true);
+        m_KeyboardMap_QPressAction = m_KeyboardMap.FindAction("QPressAction", throwIfNotFound: true);
+        m_KeyboardMap_RPressAction = m_KeyboardMap.FindAction("RPressAction", throwIfNotFound: true);
+        m_KeyboardMap_FPressAction = m_KeyboardMap.FindAction("FPressAction", throwIfNotFound: true);
         // InteractionMap
         m_InteractionMap = asset.FindActionMap("InteractionMap", throwIfNotFound: true);
         m_InteractionMap_EscapeButton = m_InteractionMap.FindAction("EscapeButton", throwIfNotFound: true);
@@ -436,11 +619,19 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_KeyboardMap;
     private IKeyboardMapActions m_KeyboardMapActionsCallbackInterface;
     private readonly InputAction m_KeyboardMap_EPressAction;
+    private readonly InputAction m_KeyboardMap_NumberPressed;
+    private readonly InputAction m_KeyboardMap_QPressAction;
+    private readonly InputAction m_KeyboardMap_RPressAction;
+    private readonly InputAction m_KeyboardMap_FPressAction;
     public struct KeyboardMapActions
     {
         private @ControlMap m_Wrapper;
         public KeyboardMapActions(@ControlMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @EPressAction => m_Wrapper.m_KeyboardMap_EPressAction;
+        public InputAction @NumberPressed => m_Wrapper.m_KeyboardMap_NumberPressed;
+        public InputAction @QPressAction => m_Wrapper.m_KeyboardMap_QPressAction;
+        public InputAction @RPressAction => m_Wrapper.m_KeyboardMap_RPressAction;
+        public InputAction @FPressAction => m_Wrapper.m_KeyboardMap_FPressAction;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -453,6 +644,18 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                 @EPressAction.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnEPressAction;
                 @EPressAction.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnEPressAction;
                 @EPressAction.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnEPressAction;
+                @NumberPressed.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnNumberPressed;
+                @NumberPressed.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnNumberPressed;
+                @NumberPressed.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnNumberPressed;
+                @QPressAction.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnQPressAction;
+                @QPressAction.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnQPressAction;
+                @QPressAction.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnQPressAction;
+                @RPressAction.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnRPressAction;
+                @RPressAction.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnRPressAction;
+                @RPressAction.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnRPressAction;
+                @FPressAction.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnFPressAction;
+                @FPressAction.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnFPressAction;
+                @FPressAction.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnFPressAction;
             }
             m_Wrapper.m_KeyboardMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -460,6 +663,18 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                 @EPressAction.started += instance.OnEPressAction;
                 @EPressAction.performed += instance.OnEPressAction;
                 @EPressAction.canceled += instance.OnEPressAction;
+                @NumberPressed.started += instance.OnNumberPressed;
+                @NumberPressed.performed += instance.OnNumberPressed;
+                @NumberPressed.canceled += instance.OnNumberPressed;
+                @QPressAction.started += instance.OnQPressAction;
+                @QPressAction.performed += instance.OnQPressAction;
+                @QPressAction.canceled += instance.OnQPressAction;
+                @RPressAction.started += instance.OnRPressAction;
+                @RPressAction.performed += instance.OnRPressAction;
+                @RPressAction.canceled += instance.OnRPressAction;
+                @FPressAction.started += instance.OnFPressAction;
+                @FPressAction.performed += instance.OnFPressAction;
+                @FPressAction.canceled += instance.OnFPressAction;
             }
         }
     }
@@ -512,6 +727,10 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
     public interface IKeyboardMapActions
     {
         void OnEPressAction(InputAction.CallbackContext context);
+        void OnNumberPressed(InputAction.CallbackContext context);
+        void OnQPressAction(InputAction.CallbackContext context);
+        void OnRPressAction(InputAction.CallbackContext context);
+        void OnFPressAction(InputAction.CallbackContext context);
     }
     public interface IInteractionMapActions
     {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Weapons.Controllers;
 using Object = UnityEngine.Object;
 
 namespace DefaultNamespace

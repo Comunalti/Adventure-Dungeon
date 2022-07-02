@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using DefaultNamespace;
 using Managers;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-namespace DefaultNamespace
+namespace Weapons.Controllers
 {
     public class SimpleWeaponController : MonoBehaviour
     {

@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using DefaultNamespace;
 using UnityEngine;
+using Weapons.Controllers;
 
 namespace Damage
 {
     public class SimpleBullet : MonoBehaviour
     {
-        //public Vector3 _direction;
         public float speed = 1;
         public float bulletLifeTime = 10;
         public float damageQuantity = 1;

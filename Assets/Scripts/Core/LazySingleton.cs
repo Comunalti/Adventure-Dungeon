@@ -17,8 +17,7 @@ namespace Core
 
                 if (instance is null)
                 {
-                    var gameObject = new GameObject(typeof(T).Name);
-                    instance = gameObject.AddComponent<T>();
+                    Debug.LogError($"No {typeof(T).Name} found");
                 }
 
                 return instance;

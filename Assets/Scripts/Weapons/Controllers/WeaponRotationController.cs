@@ -1,7 +1,7 @@
-﻿using System;
+﻿using DefaultNamespace;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Weapons.Controllers
 {
 public class WeaponRotationController : MonoBehaviour
     {

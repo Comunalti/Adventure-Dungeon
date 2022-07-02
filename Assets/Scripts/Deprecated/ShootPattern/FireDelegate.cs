@@ -1,5 +1,6 @@
 using Damage;
 using UnityEngine;
+using Weapons.Controllers;
 
 namespace DefaultNamespace
 {

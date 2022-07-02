@@ -35,11 +35,19 @@ public class Health : MonoBehaviour
        }
        
    }
-   public void RemoveHp(float damage)
+   public void RemoveHp(float damage , bool ignoreInvincibility = false)
     {
-        if (isDead||isInvincible)
+        if (isDead)
         {
             return;
+        }
+
+        if (!(ignoreInvincibility))
+        {
+            if (isInvincible)
+            {
+                return;
+            }
         }
 
         currentHp -= damage;

@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e3e30a9a4f044228920cc7cf45cca21, type: 3}
-  m_Name: DelayedFire
+  m_Script: {fileID: 11500000, guid: bd2cbdf8a9d0469d973c9b0eacaa6042, type: 3}
+  m_Name: MultipleShootPattern
   m_EditorClassIdentifier: 
-  delayTime: 0.2
-  bulletPrefab: {fileID: 2263298570718683906, guid: b9b762292c6a97544b26332a294f047d, type: 3}
-  bullets: 12
+  angleInterval: 15
+  bulletsFired: 3

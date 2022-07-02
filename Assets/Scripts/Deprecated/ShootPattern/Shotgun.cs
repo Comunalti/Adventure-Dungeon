@@ -2,6 +2,7 @@ using System;
 using Damage;
 using Unity.Mathematics;
 using UnityEngine;
+using Weapons.Controllers;
 using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
