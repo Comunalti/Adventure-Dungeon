@@ -1,6 +1,7 @@
 using System;
 using Core;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Managers
@@ -13,6 +14,7 @@ namespace Managers
         public event Action MouseRightClickEvent;
         public event Action MouseRightClickEndedEvent;
         public event Action MouseMiddleClickEvent;
+        public event Action<bool> WheelScrolledEvent;
         public event Action EPressEvent;
         public event Action QPressEvent;
         public event Action RPressEvent;
@@ -83,6 +85,15 @@ namespace Managers
         
             //print("OnMouseMove");
             MouseMovedEvent?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        public void OnScroll(InputAction.CallbackContext context)
+        {
+            var value = context.ReadValue<float>();
+            if (context.performed)
+            {
+                WheelScrolledEvent?.Invoke(value>=0);
+            }
         }
 
         public void OnDirection(InputAction.CallbackContext context)

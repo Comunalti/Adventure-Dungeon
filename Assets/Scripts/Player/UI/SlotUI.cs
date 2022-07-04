@@ -7,11 +7,11 @@ namespace Player.UI
     public class SlotUI : MonoBehaviour
     {
         private Slot slot;
-        private Image image;
+        public Image image;
+        public Sprite defaultSprite;
         private void Awake()
         {
             slot = GetComponent<Slot>();
-            image = GetComponent<Image>();
             OnWeaponConnectedChanged(slot.weaponConnected);
         }
 
@@ -30,11 +30,11 @@ namespace Player.UI
         {
             if (obj != null)
             {
-                image.sprite = obj.GetComponent<Image>().sprite;
+                image.sprite = obj.GetComponent<SpriteRenderer>().sprite;
             }
             else
             {
-                image.sprite = null;
+                image.sprite = defaultSprite;
             }
         }
 

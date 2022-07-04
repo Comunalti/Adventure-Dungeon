@@ -14,6 +14,7 @@ namespace Player
         public GameObject Add(GameObject prefab)
         {
             var clone = Instantiate(prefab, transform);
+            clone.SetActive(false);
             var weaponController = clone.GetComponentInChildren<WeaponController>();
             weaponController.Initialize(energy,owner);
             WeaponAddedEvent?.Invoke(clone);

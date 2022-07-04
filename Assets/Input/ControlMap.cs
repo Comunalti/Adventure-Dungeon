@@ -62,6 +62,15 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""f4861df7-e764-4f3d-8412-5c3157b8f4fc"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -106,6 +115,17 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b994b26c-7b07-4ceb-9670-727a63635a9a"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -447,6 +467,7 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         m_MouseMap_LeftClickAction = m_MouseMap.FindAction("LeftClickAction", throwIfNotFound: true);
         m_MouseMap_MiddleClickAction = m_MouseMap.FindAction("MiddleClickAction", throwIfNotFound: true);
         m_MouseMap_MouseMove = m_MouseMap.FindAction("MouseMove", throwIfNotFound: true);
+        m_MouseMap_Scroll = m_MouseMap.FindAction("Scroll", throwIfNotFound: true);
         // MovimentMap
         m_MovimentMap = asset.FindActionMap("MovimentMap", throwIfNotFound: true);
         m_MovimentMap_Direction = m_MovimentMap.FindAction("Direction", throwIfNotFound: true);
@@ -524,6 +545,7 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
     private readonly InputAction m_MouseMap_LeftClickAction;
     private readonly InputAction m_MouseMap_MiddleClickAction;
     private readonly InputAction m_MouseMap_MouseMove;
+    private readonly InputAction m_MouseMap_Scroll;
     public struct MouseMapActions
     {
         private @ControlMap m_Wrapper;
@@ -532,6 +554,7 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         public InputAction @LeftClickAction => m_Wrapper.m_MouseMap_LeftClickAction;
         public InputAction @MiddleClickAction => m_Wrapper.m_MouseMap_MiddleClickAction;
         public InputAction @MouseMove => m_Wrapper.m_MouseMap_MouseMove;
+        public InputAction @Scroll => m_Wrapper.m_MouseMap_Scroll;
         public InputActionMap Get() { return m_Wrapper.m_MouseMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -553,6 +576,9 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                 @MouseMove.started -= m_Wrapper.m_MouseMapActionsCallbackInterface.OnMouseMove;
                 @MouseMove.performed -= m_Wrapper.m_MouseMapActionsCallbackInterface.OnMouseMove;
                 @MouseMove.canceled -= m_Wrapper.m_MouseMapActionsCallbackInterface.OnMouseMove;
+                @Scroll.started -= m_Wrapper.m_MouseMapActionsCallbackInterface.OnScroll;
+                @Scroll.performed -= m_Wrapper.m_MouseMapActionsCallbackInterface.OnScroll;
+                @Scroll.canceled -= m_Wrapper.m_MouseMapActionsCallbackInterface.OnScroll;
             }
             m_Wrapper.m_MouseMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -569,6 +595,9 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                 @MouseMove.started += instance.OnMouseMove;
                 @MouseMove.performed += instance.OnMouseMove;
                 @MouseMove.canceled += instance.OnMouseMove;
+                @Scroll.started += instance.OnScroll;
+                @Scroll.performed += instance.OnScroll;
+                @Scroll.canceled += instance.OnScroll;
             }
         }
     }
@@ -718,6 +747,7 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         void OnLeftClickAction(InputAction.CallbackContext context);
         void OnMiddleClickAction(InputAction.CallbackContext context);
         void OnMouseMove(InputAction.CallbackContext context);
+        void OnScroll(InputAction.CallbackContext context);
     }
     public interface IMovimentMapActions
     {

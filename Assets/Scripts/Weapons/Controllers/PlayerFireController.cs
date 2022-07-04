@@ -8,7 +8,8 @@ namespace Weapons.Controllers
     public class PlayerFireController : MonoBehaviour
     {
         private bool isPressing;
-        
+        private bool isPointerOverGameObject;
+
         private void OnEnable()
         {
             InputManager.Instance.MouseLeftClickEvent += OnFireEvent;
@@ -25,7 +26,7 @@ namespace Weapons.Controllers
 
         private void OnFireEvent()
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
+            if (!isPointerOverGameObject)
             {
                 isPressing = true;
                 gameObject.BroadcastMessage("Shoot",SendMessageOptions.DontRequireReceiver);
@@ -34,6 +35,8 @@ namespace Weapons.Controllers
 
         private void Update()
         {
+            isPointerOverGameObject = EventSystem.current.IsPointerOverGameObject();
+
             if (isPressing)
             {
                 //print("is pressing");

@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6018988922143593039}
   - component: {fileID: 3408902638199402111}
   m_Layer: 0
-  m_Name: DelayWeapon 1
+  m_Name: MultipleWeapon
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6027462026148177851, guid: 48a6e0705c8ae3643828d7c31e97b529, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6dc8b80180f25b44fa2c1df298ce150f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDelay: 0
   energyCost: 2
-  precisionRange: {x: 0, y: 0}
+  precisionRange: {x: -6.9, y: 6.3747506}
   distribution:
     serializedVersion: 2
     m_Curve:
@@ -154,8 +154,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   spawnPivot: {fileID: 6018988921970018998}
-  shootPattern: {fileID: 11400000, guid: b814b244eadd5fe4aa5ed908c1d21fed, type: 2}
+  shootPattern: {fileID: 11400000, guid: 675d4e8fa73a1d84ab2f4e2cd7eba54b, type: 2}
   rarityPattern: {fileID: 0}
-  bulletPrefab: {fileID: 2918261359518890461, guid: 478d3c835c73ecf4badad3569cb76221, type: 3}
+  bulletPrefab: {fileID: 2918261359518890461, guid: b4b5458297ead544f8d0f63601301570, type: 3}
   energy: {fileID: 0}
   owner: {fileID: 0}
