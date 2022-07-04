@@ -40,10 +40,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6018988922143593038}
   - component: {fileID: 6018988922143593039}
-  - component: {fileID: 6018988922143593032}
-  - component: {fileID: 1885658198916036807}
+  - component: {fileID: 3408902638199402111}
   m_Layer: 0
-  m_Name: SimpleWeapon
+  m_Name: DelayWeapon 1
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6018988922143593037}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -104,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 44ce9ef259ae9b947b26787d97d5d36b, type: 3}
+  m_Sprite: {fileID: 6027462026148177851, guid: 48a6e0705c8ae3643828d7c31e97b529, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +114,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6018988922143593032
+--- !u!114 &3408902638199402111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,25 +123,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 6018988922143593037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ec35bdabc4345c68f12de407f2ca073, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d0048a40f54482a314dc2e8eabec19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2263298570718683906, guid: b9b762292c6a97544b26332a294f047d, type: 3}
+  attackDelay: 0
+  energyCost: 2
+  precisionRange: {x: 0, y: 0}
+  distribution:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   spawnPivot: {fileID: 6018988921970018998}
-  canFire: 1
-  delayTime: 0.1
-  fireDelegate: {fileID: 11400000, guid: 26b90a948c7706647b8393dde64e6757, type: 2}
---- !u!114 &1885658198916036807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6018988922143593037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f607b50326dde44884b7f0c20b1152d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pivo: {fileID: 0}
-  canvas: {fileID: 5851219843327734076, guid: d3308a42f286f9a41982a98b2444a3cb, type: 3}
+  shootPattern: {fileID: 11400000, guid: b814b244eadd5fe4aa5ed908c1d21fed, type: 2}
+  rarityPattern: {fileID: 0}
+  bulletPrefab: {fileID: 2918261359518890461, guid: 478d3c835c73ecf4badad3569cb76221, type: 3}
+  energy: {fileID: 0}
+  owner: {fileID: 0}

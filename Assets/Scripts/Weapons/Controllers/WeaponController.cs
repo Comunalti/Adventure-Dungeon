@@ -21,9 +21,16 @@ namespace Weapons.Controllers
         public ShootPattern shootPattern;
         public RarityPattern rarityPattern;
         public GameObject bulletPrefab;
+
+        [Header("dynamic variables")]
         public Energy energy;
         public EntitySO owner;
-        
+
+        public void Initialize(Energy energy, EntitySO owner)
+        {
+            this.energy = energy;
+            this.owner = owner;
+        }
         
         private bool canShoot = true;
         

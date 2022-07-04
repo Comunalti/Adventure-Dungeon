@@ -1,49 +1,23 @@
-using System;
-using UI;
-using Unity.Mathematics;
+﻿using System;
+using Player;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
-namespace DefaultNamespace.Weapons
+namespace Weapons
 {
-    
     public class WeaponCollector : MonoBehaviour
     {
-        public HotbarInventoryHandler hotbarInventoryHandler;
-        public HotbarItem hotbarItem;
-        [SerializeField] private DropController dropController;
-
-        private void OnTriggerEnter2D(Collider2D other)
+        public InventoryController inventoryController;
+        public event Action<GameObject> WeaponCollectedEvent;
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            var added = hotbarInventoryHandler.AddItem(hotbarItem);
-            if (added == false)
+            var collector = col.GetComponentInChildren<WeaponCollectable>();
+            if (collector != null)
             {
-                var selection = EventSystem.current.currentSelectedGameObject;
-                if (selection)
-                {
-                    var hotbarSlot = selection.GetComponent<HotbarSlot>();
-                    if (hotbarSlot)
-                    {
-                        var oldItem = hotbarSlot.SetItem(hotbarItem);
-                        if (oldItem)
-                        {
-                            dropController.Drop(oldItem);
-                        }
-                    }
-                }
+                var weaponCollected = inventoryController.Add(collector.weaponPrefab);
+                Destroy(collector.gameObject);
+                WeaponCollectedEvent?.Invoke(weaponCollected);
             }
-        }
-    }
-
-    public class DropController : MonoBehaviour
-    {
-        public GameObject itemDropPrefab;
-        public Transform player;
-        public void Drop(HotbarItem item)
-        {
-            var gameObj = Instantiate(itemDropPrefab,player.position,quaternion.identity);
-            gameObj.SendMessage("SetItem",item);
-            
         }
     }
 }

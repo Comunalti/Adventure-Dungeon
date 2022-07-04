@@ -1,6 +1,7 @@
 ﻿using System;
 using Managers;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Weapons.Controllers
 {
@@ -24,8 +25,11 @@ namespace Weapons.Controllers
 
         private void OnFireEvent()
         {
-            isPressing = true;
-            gameObject.BroadcastMessage("Shoot",SendMessageOptions.DontRequireReceiver);
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                isPressing = true;
+                gameObject.BroadcastMessage("Shoot",SendMessageOptions.DontRequireReceiver);
+            }
         }
 
         private void Update()

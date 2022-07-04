@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 8436440839799721773}
   - component: {fileID: 8436440839799721772}
   - component: {fileID: 8436440839799721771}
-  - component: {fileID: 8436440839799721775}
-  - component: {fileID: -1931008072599023329}
+  - component: {fileID: 1837669079485093631}
   m_Layer: 0
   m_Name: Collection Handler metralhadora
   m_TagString: Untagged
@@ -74,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d838e98c1b5397b4b9f51c5ab204dd59, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 6027462026148177851, guid: 48a6e0705c8ae3643828d7c31e97b529, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,8 +99,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.42
---- !u!114 &8436440839799721775
+  m_Radius: 0.5
+--- !u!114 &1837669079485093631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,20 +109,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8436440839799721770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 527dafb24d9e479da322914eec54b473, type: 3}
+  m_Script: {fileID: 11500000, guid: 80b94b808e824da2a783d36e3ba2d84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 8065e495ab525c7459dbaa71b47f208e, type: 2}
-  mainFrame: {fileID: 0}
---- !u!114 &-1931008072599023329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8436440839799721770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430b7f7c39dc4059a467a9848ccab6f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 6018988922143593037, guid: 8dc5a82079505c74abcc779e1a1b4822, type: 3}

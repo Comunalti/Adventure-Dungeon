@@ -7,7 +7,7 @@ public class WeaponRotationController : MonoBehaviour
     {
         public GameObject character;
         public MousePointerController mousePointerController;
-        public Vector3 mousePointerPosition;
+        private Vector3 mousePointerPosition;
         private void OnEnable()
         {
             mousePointerController.MousePointerWorldPositionChangedEvent += OnMousePointerChange;
