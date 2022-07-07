@@ -14,12 +14,6 @@ public class MousePointerAnimationController : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
-    {
-        InputManager.Instance.MouseRightClickEvent += MouseClicked;
-        InputManager.Instance.MouseRightClickEndedEvent += MouseEndedClick;
-    }
-
     private void MouseEndedClick()
     {
         _animator.SetBool(MousePressed,false);
@@ -30,9 +24,15 @@ public class MousePointerAnimationController : MonoBehaviour
         _animator.SetBool(MousePressed,true);
     }
 
+    private void OnEnable()
+    {
+        InputManager.Instance.MouseLeftClickEvent += MouseClicked;
+        InputManager.Instance.MouseLeftClickEndedEvent += MouseEndedClick;
+    }
+
     private void OnDisable()
     {
-        InputManager.Instance.MouseRightClickEvent -= MouseClicked;
-        InputManager.Instance.MouseRightClickEndedEvent -= MouseEndedClick;
+        InputManager.Instance.MouseLeftClickEvent -= MouseClicked;
+        InputManager.Instance.MouseLeftClickEndedEvent -= MouseEndedClick;
     }
 }

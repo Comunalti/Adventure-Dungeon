@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using Entities;
 using UnityEngine;
-using Weapons.Bullets;
 using Weapons.Controllers;
 
 namespace Weapons.ShootPatterns

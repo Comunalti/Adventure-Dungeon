@@ -2,18 +2,12 @@
 using Damage;
 using Entities;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Weapons.Bullets
+namespace Bullets
 {
     [RequireComponent(typeof(Entity))]
     public class Bullet : MonoBehaviour
     {
-        public GameObject spawnEffectPrefab;
-        
-       
-
-
         public event Action BulletHitEvent;
         public event Action BulletDestroyedEvent;
         public event Action BulletLifeTimeExpireEvent;
@@ -83,13 +77,13 @@ namespace Weapons.Bullets
                 healthComponent.RemoveHp(damage);
                 enabled = false;
                 BulletHitEvent?.Invoke();
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
             else
             {
                 enabled = false;
                 BulletDestroyedEvent?.Invoke();
-                Destroy(gameObject);
+               // Destroy(gameObject);
 
             }
         }
