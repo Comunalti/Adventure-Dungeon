@@ -14,9 +14,24 @@ namespace Weapons.Controllers
         public float delayTime = 1;
         public FireDelegate fireDelegate;
 
+        public Energy energy;
+        public float energyCost;
+        
+        public event Action FireEvent;
+        public event Action FireFailEvent;
+
         private void CallFire() 
         {
-            fireDelegate.Fire(this);
+            if (canFire && energy.GetEnergy() >= energyCost)
+            {
+                fireDelegate.Fire(this);
+                FireEvent?.Invoke();
+                energy.AddToCurrentEnergy(-energyCost);
+            }
+            else
+            {
+                FireFailEvent?.Invoke();
+            }
         }
 
         public IEnumerator ResetFire()

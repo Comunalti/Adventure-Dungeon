@@ -13,6 +13,8 @@ namespace Damage
         public ElementalDamage elementalDamage;
         [SerializeField] private GameObject owner;
         
+        public GameObject player;
+
         private void Update()
         {
             transform.position = transform.position + transform.right* (Time.deltaTime * speed);
@@ -33,6 +35,9 @@ namespace Damage
 
             col.gameObject.BroadcastMessage("RemoveHp",damageQuantity,SendMessageOptions.DontRequireReceiver);
             col.gameObject.BroadcastMessage("DealElementalDamage",elementalDamage,SendMessageOptions.DontRequireReceiver);
+
+            // owner.GetComponent<Energy>().AddToCurrentEnergy(damageQuantity); tentativa de recuperar a energia do player quando acerta uma bala
+            
             Destroy(gameObject);
         }
 
@@ -40,6 +45,7 @@ namespace Damage
         {
             owner = simpleWeaponController.gameObject;
         }
+        
         public IEnumerator DestroyBullet()
         {
             yield return new WaitForSeconds(bulletLifeTime);

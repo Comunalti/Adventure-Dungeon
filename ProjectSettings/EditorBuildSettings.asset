@@ -6,9 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/FinalScenes/CenaSalva3.unity
-    guid: 7ff70bc6531c44441920c732bfc2ac8f
+    path: Assets/Scenes/AlwaysOn.unity
+    guid: aff1b91243b8eb743ab37de2f230c4f4
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+    path: Assets/Scenes/MainMenu.unity
+    guid: eaeee7a3b2226fa4993c54eda33b7fee
+  - enabled: 1
+    path: Assets/Scenes/CopyScene.unity
+    guid: 2df7843216e71a844a47941fe21242b9
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 534136e43c99dd240a41525e54aeec40, type: 2}

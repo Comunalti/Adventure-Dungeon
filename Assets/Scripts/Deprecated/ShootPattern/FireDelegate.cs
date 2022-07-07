@@ -9,11 +9,6 @@ namespace DefaultNamespace
     {
         public virtual void Fire(SimpleWeaponController weaponController)
         {
-            if (!weaponController.canFire)
-            {
-                return;
-            }
-
             weaponController.canFire = false;
             Shoot(weaponController.bulletPrefab,weaponController);
             
