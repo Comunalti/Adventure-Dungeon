@@ -97,11 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1946a018319b465ab89e48ca2a1a5187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  bulletLifeTime: 5
+  speed: 5
+  bulletLifeTime: 4
   damageQuantity: 1
   elementalDamage: {fileID: 11400000, guid: 6bd0b2ad91a05274e843c32b1252db83, type: 2}
   owner: {fileID: 0}
+  player: {fileID: 0}
 --- !u!58 &2080760263257179605
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -11,14 +11,14 @@ public class EnergyUI : MonoBehaviour
 
     private void OnEnable()
     {
-        energy.EnergyRechargeEvent += RefreshUI;
-        energy.EnergyUseEvent += RefreshUI;
+        energy.CurrentEnergyChangeEvent += RefreshUI;
+        // energy.EnergyUseEvent += RefreshUI;
     }
 
     private void OnDisable()
     {
-        energy.EnergyRechargeEvent -= RefreshUI;
-        energy.EnergyUseEvent -= RefreshUI;
+        energy.CurrentEnergyChangeEvent -= RefreshUI;
+        // energy.EnergyUseEvent -= RefreshUI;
     }
 
     private void RefreshUI(float quantity)

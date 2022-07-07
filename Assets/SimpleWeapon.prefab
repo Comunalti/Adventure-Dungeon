@@ -132,6 +132,8 @@ MonoBehaviour:
   canFire: 1
   delayTime: 0.1
   fireDelegate: {fileID: 11400000, guid: 26b90a948c7706647b8393dde64e6757, type: 2}
+  energy: {fileID: 0}
+  energyCost: 1
 --- !u!114 &1885658198916036807
 MonoBehaviour:
   m_ObjectHideFlags: 0

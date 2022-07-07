@@ -9,10 +9,12 @@ public class NewDash : MonoBehaviour
 {
     [SerializeField] private Health health;
     private Rigidbody2D _rigidbody2D;
+    public Energy energy;
     [SerializeField] private float dashSpeed = 1;
-     private Vector2 _direction;
+    private Vector2 _direction;
     [SerializeField] private bool canDash;
     [SerializeField] private float dashDelay = 1;
+    [SerializeField] private float dashCost = 2;
     [SerializeField] private float invincibilityTime = 1;
     public event Action DashFireEvent;
     public event Action DashFailEvent;
@@ -53,14 +55,16 @@ public class NewDash : MonoBehaviour
 
     private void OnDash()
     {
-        if (canDash)
+        if (canDash && energy.GetEnergy() >= dashCost)
         {
             _rigidbody2D.AddForce(_direction * dashSpeed, ForceMode2D.Impulse);
             canDash = false;
             health.isInvincible = true;
             StartCoroutine(ResetDash());
             StartCoroutine(ResetInvincibility());
-
+            energy.AddToCurrentEnergy(-dashCost);
+            
+            Debug.Log("Dash");
             DashFireEvent?.Invoke();
         }
         else

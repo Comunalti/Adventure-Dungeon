@@ -12,10 +12,8 @@ public class EnergyOrb : MonoBehaviour
     {
         var energy = col.gameObject.GetComponent<Energy>();
 
-        if (energy != null)
-        {
-            energy.EnergyRecharge(quantity);
-            Destroy(gameObject);
-        }
+        if (energy == null) return;
+        energy.AddToCurrentEnergy(quantity);
+        Destroy(gameObject);
     }
 }
