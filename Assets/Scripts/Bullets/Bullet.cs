@@ -83,11 +83,14 @@ namespace Weapons.Bullets
                 healthComponent.RemoveHp(damage);
                 enabled = false;
                 BulletHitEvent?.Invoke();
+                Destroy(gameObject);
             }
             else
             {
                 enabled = false;
                 BulletDestroyedEvent?.Invoke();
+                Destroy(gameObject);
+
             }
         }
     }

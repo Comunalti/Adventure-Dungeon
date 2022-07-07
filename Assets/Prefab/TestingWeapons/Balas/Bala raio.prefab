@@ -127,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnEffectPrefab: {fileID: 0}
   damage: 1
-  speed: 2
-  lifeTime: 10
+  speed: 6
+  lifeTime: 0.5
   elementalDamage: {fileID: 0}
 --- !u!50 &615731911268691976
 Rigidbody2D:

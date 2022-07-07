@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using Damage;
 using Entities;
-using GD.MinMaxSlider;
+
+
+
 using UnityEngine;
-using UnityEngine.Serialization;
 using Weapons.ShootPatterns;
 using Random = UnityEngine.Random;
 
@@ -14,7 +15,8 @@ namespace Weapons.Controllers
         
         [Min(0)]public float attackDelay = 0;
         [Min(0)]public float energyCost = 0;
-        [MinMaxSlider(-30,30)] public Vector2 precisionRange;
+
+        public Vector2 precisionRange;
         public AnimationCurve distribution;
         public Transform spawnPivot;
 

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
-using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -45,7 +44,7 @@ namespace DefaultNamespace.AI.StateMachine
                 //points[i] = Handles.DoPositionHandle(points[i],quaternion.identity);
             }
             
-            Handles.DrawPolyLine(points);
+            //Handles.DrawPolyLine(points);
         }
     }
 }
