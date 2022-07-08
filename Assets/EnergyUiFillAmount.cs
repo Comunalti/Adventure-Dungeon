@@ -8,14 +8,12 @@ public class EnergyUiFillAmount : MonoBehaviour
     
     private void OnEnable()
     {
-        energy.EnergyUseEvent += OnDamage;
-        energy.EnergyRechargeEvent += OnDamage;
+        energy.CurrentEnergyChangeEvent += OnDamage;
     }
 
     private void OnDisable()
     {
-        energy.EnergyUseEvent -= OnDamage;
-        energy.EnergyRechargeEvent -= OnDamage;
+        energy.CurrentEnergyChangeEvent -= OnDamage;
     }
 
     private void OnDamage(float obj)

@@ -28,6 +28,12 @@ public class Energy : MonoBehaviour
         currentEnergy = Mathf.Clamp(currentEnergy + quantity, 0, maxEnergy);
         CurrentEnergyChangeEvent?.Invoke(quantity);
     }
+    
+    public void RemoveFromCurrentEnergy(float quantity)
+    {
+        currentEnergy = Mathf.Clamp(currentEnergy - quantity, 0, maxEnergy);
+        CurrentEnergyChangeEvent?.Invoke(quantity);
+    }
 
     public float GetPercentage()
     {
@@ -37,5 +43,10 @@ public class Energy : MonoBehaviour
     public float GetEnergy()
     {
         return currentEnergy;
+    }
+    
+    public bool Have(float energyCost)
+    {
+        return currentEnergy > energyCost;
     }
 }

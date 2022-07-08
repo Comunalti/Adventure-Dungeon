@@ -62,7 +62,7 @@ namespace Weapons.Controllers
             if (isActiveAndEnabled && canShoot && energy.Have(energyCost))
             {
                 canShoot = false;
-                energy.Remove(energyCost);
+                energy.RemoveFromCurrentEnergy(energyCost);
                 StartCoroutine(shootPattern.Fire(this, bulletPrefab));
                 StartCoroutine(ResetCanShoot(attackDelay));
                 return true;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Weapons.Controllers;
 
 namespace DefaultNamespace.UI2
 {
@@ -9,7 +10,7 @@ namespace DefaultNamespace.UI2
         {
             if (weapon == null) return null;
             var instance = Instantiate(weapon.prefab, transform);
-            instance.GetComponent<SimpleWeaponController>().energy = energy;
+            instance.GetComponent<WeaponController>().energy = energy;
             return instance;
         }
     }

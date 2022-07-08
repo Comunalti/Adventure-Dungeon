@@ -52,7 +52,7 @@ namespace DefaultNamespace
             canCancelAnimation = false;
             if (!dashActive && energy.Have(energyCost))
             {
-                energy.Remove(energyCost);
+                energy.RemoveFromCurrentEnergy(energyCost);
                 storedDirection = inputDirection;
                 dashActive = true;
                 currentAnimationTime = 0;
