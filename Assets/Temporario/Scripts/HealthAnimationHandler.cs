@@ -21,6 +21,7 @@ namespace Temporario.Scripts
 
         private void OnDeath()
         {
+            print("died");
             animator.SetTrigger("Died");
         }
     }
