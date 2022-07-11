@@ -1,15 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Energy;
+using Health;
 using Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class NewDash : MonoBehaviour
 {
-    [SerializeField] private Health health;
+    [SerializeField] private HealthController healthController;
     private Rigidbody2D _rigidbody2D;
-    public Energy energy;
+    public EnergyController energy;
     [SerializeField] private float dashSpeed = 1;
     private Vector2 _direction;
     [SerializeField] private bool canDash;
@@ -22,7 +24,7 @@ public class NewDash : MonoBehaviour
     private IEnumerator ResetInvincibility()
     {
         yield return new WaitForSeconds(invincibilityTime);
-        health.isInvincible = false;
+        healthController.isInvincible = false;
     }
     private IEnumerator ResetDash()
     {
@@ -59,10 +61,10 @@ public class NewDash : MonoBehaviour
         {
             _rigidbody2D.AddForce(_direction * dashSpeed, ForceMode2D.Impulse);
             canDash = false;
-            health.isInvincible = true;
+            healthController.isInvincible = true;
             StartCoroutine(ResetDash());
             StartCoroutine(ResetInvincibility());
-            energy.AddToCurrentEnergy(-dashCost);
+            energy.AddCurrentEnergy(-dashCost);
             
             Debug.Log("Dash");
             DashFireEvent?.Invoke();

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Damage;
+using Energy;
 using Entities;
 
 
@@ -25,10 +26,10 @@ namespace Weapons.Controllers
         public GameObject bulletPrefab;
 
         [Header("dynamic variables")]
-        public Energy energy;
+        public EnergyController energy;
         public EntitySO owner;
 
-        public void Initialize(Energy energy, EntitySO owner)
+        public void Initialize(EnergyController energy, EntitySO owner)
         {
             this.energy = energy;
             this.owner = owner;
@@ -62,7 +63,7 @@ namespace Weapons.Controllers
             if (isActiveAndEnabled && canShoot && energy.Have(energyCost))
             {
                 canShoot = false;
-                energy.RemoveFromCurrentEnergy(energyCost);
+                energy.RemoveCurrentEnergy(energyCost);
                 StartCoroutine(shootPattern.Fire(this, bulletPrefab));
                 StartCoroutine(ResetCanShoot(attackDelay));
                 return true;

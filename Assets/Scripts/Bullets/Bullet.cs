@@ -1,6 +1,7 @@
 ﻿using System;
 using Damage;
 using Entities;
+using Health;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -84,11 +85,11 @@ namespace Bullets
                 return;
             }
             
-            var healthComponent = col.GetComponentInChildren<Health>();
+            var healthComponent = col.GetComponentInChildren<HealthController>();
 
             if (healthComponent != null)
             {
-                healthComponent.RemoveHp(damage);
+                healthComponent.RemoveCurrentHealth(damage);
                 enabled = false;
                 BulletHitEvent?.Invoke();
                 //Destroy(gameObject);

@@ -1,4 +1,5 @@
 ﻿using System;
+using Health;
 using Player;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ namespace Weapons.AI.SimpleAI
                 print(collision.collider.gameObject.name);
                 if (collision.collider.gameObject.CompareTag("Player"))
                 {
-                    collision.collider.GetComponent<Health>().RemoveHp(damage);
+                    collision.collider.GetComponent<HealthController>().RemoveCurrentHealth(damage);
                 }    
             }
         }

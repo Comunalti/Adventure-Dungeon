@@ -1,27 +1,25 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Temporario.Scripts
+namespace Health
 {
     public class HealthAnimationHandler : MonoBehaviour
     {
         public Animator animator;
-        public Health health;
+        public HealthController healthController;
 
         private void OnEnable()
         {
-            health.DiedEvent += OnDeath;
+            healthController.DeathEvent += OnDeath;
         }
 
         private void OnDisable()
         {
-            health.DiedEvent -= OnDeath;
+            healthController.DeathEvent -= OnDeath;
 
         }
 
         private void OnDeath()
         {
-            print("died");
             animator.SetTrigger("Died");
         }
     }

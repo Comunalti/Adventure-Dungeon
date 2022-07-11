@@ -1,24 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Health;
 using UnityEngine;
 
 public class DeathFadeController : MonoBehaviour
 {
-    public Health health;
+    public HealthController healthController;
     public SpriteRenderer spriteRenderer;
     [SerializeField] private float duration;
     
     private void OnEnable()
     {
-        health.DiedEvent += OnEnemyDied;
+        healthController.DeathEvent += OnEnemyDeath;
     }
     private void OnDisable()
     {
-        health.DiedEvent -= OnEnemyDied;
+        healthController.DeathEvent -= OnEnemyDeath;
     }
 
-    private void OnEnemyDied()
+    private void OnEnemyDeath()
     {
         StartCoroutine(Animate());
     }

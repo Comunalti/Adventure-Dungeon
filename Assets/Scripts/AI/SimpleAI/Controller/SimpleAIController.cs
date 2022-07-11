@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Health;
 using Player;
 using UnityEditor;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class SimpleAIController : MonoBehaviour
 {
     private PlayerController player;
     public float walkSpeed;
-    public Health health;
+    public HealthController healthController;
     
     private void Awake()
     {
@@ -18,15 +19,15 @@ public class SimpleAIController : MonoBehaviour
 
     private void OnEnable()
     {
-        health.DiedEvent += OnEnemyDied;
+        healthController.DeathEvent += OnEnemyDeath;
     }
 
     private void OnDisable()
     {
-        health.DiedEvent -= OnEnemyDied;
+        healthController.DeathEvent -= OnEnemyDeath;
     }
 
-    private void OnEnemyDied()
+    private void OnEnemyDeath()
     {
         enabled = false;
     }

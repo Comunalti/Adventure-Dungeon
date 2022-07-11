@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using DefaultNamespace;
+using Energy;
 using Managers;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ namespace Weapons.Controllers
         public float delayTime = 1;
         public FireDelegate fireDelegate;
 
-        public Energy energy;
+        public EnergyController energy;
         public float energyCost;
         
         public event Action FireEvent;
@@ -27,7 +28,7 @@ namespace Weapons.Controllers
             {
                 fireDelegate.Fire(this);
                 FireEvent?.Invoke();
-                energy.AddToCurrentEnergy(-energyCost);
+                energy.AddCurrentEnergy(-energyCost);
             }
             else
             {

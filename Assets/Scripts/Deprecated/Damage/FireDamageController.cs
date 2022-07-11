@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Health;
 using UnityEngine;
 using UnityEngine.InputSystem.XR.Haptics;
 
@@ -7,7 +8,7 @@ namespace Damage
 {
     public class FireDamageController : MonoBehaviour
     {
-        [SerializeField] private Health health;
+        [SerializeField] private HealthController healthController;
         public string damageString;
         public float bulletFireDamage;
         [SerializeField]public bool isOnFire;
@@ -29,7 +30,7 @@ namespace Damage
         {
             if (isOnFire)
             {
-                health.RemoveHp(damage*Time.deltaTime);
+                healthController.RemoveCurrentHealth(damage*Time.deltaTime);
             }
             
             
@@ -38,11 +39,11 @@ namespace Damage
         
         private void OnEnable()
         {
-            health.TookElementalDamageEvent += OnElementalDamage;
+            //healthController.TookElementalDamageEvent += OnElementalDamage;
         }
         private void OnDisable()
         {
-            health.TookElementalDamageEvent -= OnElementalDamage;
+            //healthController.TookElementalDamageEvent -= OnElementalDamage;
         }
         
         private void OnElementalDamage(ElementalDamage elementalDamage)

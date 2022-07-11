@@ -1,4 +1,5 @@
 ﻿using System;
+using Health;
 using Managers;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        public Health health;
+        public HealthController healthController;
         private void Awake()
         {
             PlayerManager.Instance.AddPlayer(this);
@@ -14,15 +15,15 @@ namespace Player
 
         private void OnEnable()
         {
-            health.DiedEvent += OnPlayerDied;
+            healthController.DeathEvent += OnPlayerDeath;
         }
 
         public void OnDisable()
         {
-            health.DiedEvent -= OnPlayerDied;
+            healthController.DeathEvent -= OnPlayerDeath;
         }
 
-        private void OnPlayerDied()
+        private void OnPlayerDeath()
         {
             Destroy(gameObject);
 

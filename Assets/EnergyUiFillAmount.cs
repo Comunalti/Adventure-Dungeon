@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Energy;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class EnergyUiFillAmount : MonoBehaviour
 {
-    public Energy energy;
+    public EnergyController energy;
     public Image image;
     
     private void OnEnable()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Health;
 using UnityEngine;
 using MovementCommands;
 
@@ -9,19 +10,19 @@ namespace Damage
     public class ElectricDamageController : MonoBehaviour
     {
         
-        [SerializeField] private Health health;
+        [SerializeField] private HealthController healthController;
         public string damageString;
         public float bulletElectricDamage;
         [SerializeField]public bool isOnElectric;
         [SerializeField] private float electricDelay = 0.1f;
         public float electricDamage;
         [SerializeField] private float electricSpeed;
-        public List<Health> healthList = new List<Health>();
+        public List<HealthController> healthList = new List<HealthController>();
         [SerializeField] private float damage = 0.5f;
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            var health = col.GetComponent<Health>();
+            var health = col.GetComponent<HealthController>();
             if (health)
             {
                 healthList.Add(health); 
@@ -30,7 +31,7 @@ namespace Damage
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            var health = other.GetComponent<Health>();
+            var health = other.GetComponent<HealthController>();
             if (health)
             {
                 healthList.Remove(health);
@@ -51,11 +52,11 @@ namespace Damage
 
         private void OnEnable()
         {
-            health.TookElementalDamageEvent += OnElementalDamage;
+            //healthController.TookElementalDamageEvent += OnElementalDamage;
         }
         private void OnDisable()
         {
-            health.TookElementalDamageEvent -= OnElementalDamage;
+            //healthController.TookElementalDamageEvent -= OnElementalDamage;
         }
         
         private void OnElementalDamage(ElementalDamage elementalDamage)
@@ -75,7 +76,7 @@ namespace Damage
         {
             foreach (var health in healthList)
             {
-                health.RemoveHp(damage);
+                health.RemoveCurrentHealth(damage);
             }
         }
     }

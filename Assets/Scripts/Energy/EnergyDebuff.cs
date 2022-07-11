@@ -1,18 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyDebuff : MonoBehaviour
+namespace Energy
 {
-    [SerializeField] private float value;
-    [SerializeField] private float delayInSeconds;
-    private void OnTriggerEnter2D(Collider2D col)
+    public class EnergyDebuff : MonoBehaviour
     {
-        var energy = col.gameObject.GetComponent<Energy>();
+        [SerializeField] private float value;
+        [SerializeField] private float delayInSeconds;
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            var energy = col.gameObject.GetComponent<EnergyController>();
 
-        if (energy == null) return;
-        // StartCoroutine(energy.SetNerf(value, delayInSeconds));
-        Destroy(gameObject);
+            if (energy == null) return;
+            // StartCoroutine(energy.SetNerf(value, delayInSeconds));
+            Destroy(gameObject);
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using Energy;
+using Health;
 using Managers;
 using UnityEngine;
 
@@ -7,13 +9,13 @@ namespace DefaultNamespace
 {
     public class DashController : MonoBehaviour
     {
-        public Health health;
+        public HealthController healthController;
         public Rigidbody2D rigidbody2D;
         public Animator animator;
         
         public AnimationCurve playerSpeedProfile;
 
-        public Energy energy;
+        public EnergyController energy;
         public float energyCost;
         
         private bool dashInput = false;
@@ -28,12 +30,12 @@ namespace DefaultNamespace
 
         public void EnterInvincibleFrame()
         {
-            health.isInvincible = true;
+            healthController.isInvincible = true;
         }
 
         public void LeaveInvincibleFrame()
         {
-            health.isInvincible = false;
+            healthController.isInvincible = false;
 
         }
         
@@ -52,7 +54,7 @@ namespace DefaultNamespace
             canCancelAnimation = false;
             if (!dashActive && energy.Have(energyCost))
             {
-                energy.RemoveFromCurrentEnergy(energyCost);
+                energy.RemoveCurrentEnergy(energyCost);
                 storedDirection = inputDirection;
                 dashActive = true;
                 currentAnimationTime = 0;

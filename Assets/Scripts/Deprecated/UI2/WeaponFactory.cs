@@ -1,3 +1,4 @@
+using Energy;
 using UnityEngine;
 using Weapons.Controllers;
 
@@ -5,7 +6,7 @@ namespace DefaultNamespace.UI2
 {
     public class WeaponFactory : MonoBehaviour
     {
-        [SerializeField] private Energy energy;
+        [SerializeField] private EnergyController energy;
         public GameObject Create(Weapon weapon)
         {
             if (weapon == null) return null;

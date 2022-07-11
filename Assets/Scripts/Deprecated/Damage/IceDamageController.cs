@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Health;
 using MovementCommands;
 using UnityEngine;
 using static MovementCommands.NormalMovementCommand;
@@ -10,7 +11,7 @@ namespace Damage
     public class IceDamageController : MonoBehaviour
     {
         [SerializeField] private NormalMovementCommand normalMovementCommand;
-        [SerializeField] private Health health;
+        [SerializeField] private HealthController healthController;
         public string damageString;
         public float bulletIceDamage;
         [SerializeField]public bool isOnIce;
@@ -33,11 +34,11 @@ namespace Damage
 
         private void OnEnable()
         {
-            health.TookElementalDamageEvent += OnElementalDamage;
+            //healthController.TookElementalDamageEvent += OnElementalDamage;
         }
         private void OnDisable()
         {
-            health.TookElementalDamageEvent -= OnElementalDamage;
+            //healthController.TookElementalDamageEvent -= OnElementalDamage;
         }
         
         private void OnElementalDamage(ElementalDamage elementalDamage)

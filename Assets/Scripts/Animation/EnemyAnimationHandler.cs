@@ -1,24 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Health;
 using UnityEngine;
 
 public class EnemyAnimationHandler : MonoBehaviour
 {
     [SerializeField] private GameObject enemy;
     [SerializeField] private Animator anim;
-    [SerializeField] private Health health;
+    [SerializeField] private HealthController healthController;
     [SerializeField] private SpriteRenderer sprRnd;
     [SerializeField] private float fadeOutSpeed = 0.1f;
     
     private void OnEnable()
     {
-        health.DiedEvent += OnEnemyDeath;
+        healthController.DeathEvent += OnEnemyDeath;
     }
     
     private void OnDisable()
     {
-        health.DiedEvent -= OnEnemyDeath;
+        healthController.DeathEvent -= OnEnemyDeath;
     }
 
     private void OnEnemyDeath()
