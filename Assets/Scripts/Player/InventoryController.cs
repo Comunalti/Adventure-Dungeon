@@ -12,10 +12,12 @@ namespace Player
         [SerializeField] private EnergyController energy;
         public event Action<GameObject> WeaponAddedEvent;
         
-        public GameObject Add(GameObject prefab)
+        public GameObject Add(GameObject clone)
         {
-            var clone = Instantiate(prefab, transform);
-            clone.SetActive(false);
+            clone.transform.parent = transform;
+            clone.transform.localPosition = Vector3.zero;
+            clone.transform.localRotation = Quaternion.identity;
+            clone.SetActive(true);
             var weaponController = clone.GetComponentInChildren<WeaponController>();
             weaponController.Initialize(energy,owner);
             WeaponAddedEvent?.Invoke(clone);

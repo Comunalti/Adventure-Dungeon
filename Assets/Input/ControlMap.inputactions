@@ -249,6 +249,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AltPressAction",
+                    "type": "Button",
+                    "id": "b4c2e02d-d813-4911-9860-3bb92fa7e137",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "XPressAction",
+                    "type": "Button",
+                    "id": "6a8c91c4-0e48-4efd-bb41-fe332b06f783",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -403,6 +421,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "FPressAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b100a06-de19-46f0-8626-bafb22463d58",
+                    "path": "<Keyboard>/leftAlt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AltPressAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e708fe7-ef0a-4a99-8ddc-1e90a9f15d98",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AltPressAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5735344c-e9b6-428c-b2da-ac00aea4ee3d",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "XPressAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

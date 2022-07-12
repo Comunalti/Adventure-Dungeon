@@ -19,6 +19,11 @@ namespace Managers
         public event Action QPressEvent;
         public event Action RPressEvent;
         public event Action FPressEvent;
+        public event Action XPressEvent;
+
+        public event Action AltPressEnddedEvent;
+        public event Action<bool> AltChangedEvent;
+        public event Action AltPressEvent;
         public event Action<int> NumberPressEvent;
         public event Action<Vector2> MouseMovedEvent;
         public event Action<Vector2> DirectionChangedEvent;
@@ -27,21 +32,22 @@ namespace Managers
         public event Action DashStopEvent;
 
 
-        private ControlMap _controlMap;
+        public ControlMap controlMap;
 
         private void Start()
         {
-            _controlMap = new ControlMap();
-            _controlMap.MouseMap.SetCallbacks(this);
-            _controlMap.MovimentMap.SetCallbacks(this);
-            _controlMap.KeyboardMap.SetCallbacks(this);
-            _controlMap.Enable();
+            controlMap = new ControlMap();
+            controlMap.MouseMap.SetCallbacks(this);
+            controlMap.MovimentMap.SetCallbacks(this);
+            controlMap.KeyboardMap.SetCallbacks(this);
+            controlMap.Enable();
+            
         }
 
 
         private void OnDestroy()
         {
-            _controlMap?.Dispose();
+            controlMap?.Dispose();
         }
 
         public void OnRightClickAction(InputAction.CallbackContext context)
@@ -155,6 +161,31 @@ namespace Managers
                FPressEvent?.Invoke();
             }        
         }
+        public void OnXPressAction(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton() && context.performed)
+            {
+                XPressEvent?.Invoke();
+            }    
+        }
 
+        public void OnAltPressAction(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton() && context.performed)
+            {
+                AltPressEvent?.Invoke();
+                AltChangedEvent?.Invoke(true);
+                //print("pressed alt");
+            }
+            else if(!context.ReadValueAsButton())
+            {
+                AltPressEnddedEvent?.Invoke();
+                AltChangedEvent?.Invoke(false);
+                //print("unpressed alt");
+            }
+            
+        }
+
+        
     }
 }

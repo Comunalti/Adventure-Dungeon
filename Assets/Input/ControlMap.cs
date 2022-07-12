@@ -271,6 +271,24 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AltPressAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4c2e02d-d813-4911-9860-3bb92fa7e137"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""XPressAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a8c91c4-0e48-4efd-bb41-fe332b06f783"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -427,6 +445,39 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                     ""action"": ""FPressAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b100a06-de19-46f0-8626-bafb22463d58"",
+                    ""path"": ""<Keyboard>/leftAlt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AltPressAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e708fe7-ef0a-4a99-8ddc-1e90a9f15d98"",
+                    ""path"": ""<Keyboard>/alt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AltPressAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5735344c-e9b6-428c-b2da-ac00aea4ee3d"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""XPressAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -479,6 +530,8 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         m_KeyboardMap_QPressAction = m_KeyboardMap.FindAction("QPressAction", throwIfNotFound: true);
         m_KeyboardMap_RPressAction = m_KeyboardMap.FindAction("RPressAction", throwIfNotFound: true);
         m_KeyboardMap_FPressAction = m_KeyboardMap.FindAction("FPressAction", throwIfNotFound: true);
+        m_KeyboardMap_AltPressAction = m_KeyboardMap.FindAction("AltPressAction", throwIfNotFound: true);
+        m_KeyboardMap_XPressAction = m_KeyboardMap.FindAction("XPressAction", throwIfNotFound: true);
         // InteractionMap
         m_InteractionMap = asset.FindActionMap("InteractionMap", throwIfNotFound: true);
         m_InteractionMap_EscapeButton = m_InteractionMap.FindAction("EscapeButton", throwIfNotFound: true);
@@ -652,6 +705,8 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyboardMap_QPressAction;
     private readonly InputAction m_KeyboardMap_RPressAction;
     private readonly InputAction m_KeyboardMap_FPressAction;
+    private readonly InputAction m_KeyboardMap_AltPressAction;
+    private readonly InputAction m_KeyboardMap_XPressAction;
     public struct KeyboardMapActions
     {
         private @ControlMap m_Wrapper;
@@ -661,6 +716,8 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         public InputAction @QPressAction => m_Wrapper.m_KeyboardMap_QPressAction;
         public InputAction @RPressAction => m_Wrapper.m_KeyboardMap_RPressAction;
         public InputAction @FPressAction => m_Wrapper.m_KeyboardMap_FPressAction;
+        public InputAction @AltPressAction => m_Wrapper.m_KeyboardMap_AltPressAction;
+        public InputAction @XPressAction => m_Wrapper.m_KeyboardMap_XPressAction;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -685,6 +742,12 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                 @FPressAction.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnFPressAction;
                 @FPressAction.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnFPressAction;
                 @FPressAction.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnFPressAction;
+                @AltPressAction.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnAltPressAction;
+                @AltPressAction.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnAltPressAction;
+                @AltPressAction.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnAltPressAction;
+                @XPressAction.started -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnXPressAction;
+                @XPressAction.performed -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnXPressAction;
+                @XPressAction.canceled -= m_Wrapper.m_KeyboardMapActionsCallbackInterface.OnXPressAction;
             }
             m_Wrapper.m_KeyboardMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -704,6 +767,12 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
                 @FPressAction.started += instance.OnFPressAction;
                 @FPressAction.performed += instance.OnFPressAction;
                 @FPressAction.canceled += instance.OnFPressAction;
+                @AltPressAction.started += instance.OnAltPressAction;
+                @AltPressAction.performed += instance.OnAltPressAction;
+                @AltPressAction.canceled += instance.OnAltPressAction;
+                @XPressAction.started += instance.OnXPressAction;
+                @XPressAction.performed += instance.OnXPressAction;
+                @XPressAction.canceled += instance.OnXPressAction;
             }
         }
     }
@@ -761,6 +830,8 @@ public partial class @ControlMap : IInputActionCollection2, IDisposable
         void OnQPressAction(InputAction.CallbackContext context);
         void OnRPressAction(InputAction.CallbackContext context);
         void OnFPressAction(InputAction.CallbackContext context);
+        void OnAltPressAction(InputAction.CallbackContext context);
+        void OnXPressAction(InputAction.CallbackContext context);
     }
     public interface IInteractionMapActions
     {
