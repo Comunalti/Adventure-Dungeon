@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Damage;
 using Energy;
 using Entities;
@@ -29,6 +30,8 @@ namespace Weapons.Controllers
         public EnergyController energy;
         public EntitySO owner;
 
+        public event Action WeaponFiredEvent;
+        public event Action WeaponFireFailedEvent;
         public void Initialize(EnergyController energy, EntitySO owner)
         {
             this.energy = energy;
@@ -66,10 +69,12 @@ namespace Weapons.Controllers
                 energy.RemoveCurrentEnergy(energyCost);
                 StartCoroutine(shootPattern.Fire(this, bulletPrefab));
                 StartCoroutine(ResetCanShoot(attackDelay));
+                WeaponFiredEvent?.Invoke();
                 return true;
             }
             else
             {
+                WeaponFireFailedEvent?.Invoke();
                 return false;
             }
         }

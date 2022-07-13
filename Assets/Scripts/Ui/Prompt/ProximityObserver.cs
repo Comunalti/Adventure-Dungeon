@@ -42,7 +42,10 @@ namespace Ui
         {
             if (_currentActive == null)
             {
-                Set(this);
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    Set(this);
+                }
             }
         }
 
@@ -50,10 +53,7 @@ namespace Ui
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                if (_currentActive == this)
-                {
-                    Set(null);
-                }
+                Set(null);
             }
         }
     }

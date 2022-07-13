@@ -1371,9 +1371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6098dbe6e43c8f642bfa03654a07ca2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingQuantity: 2
-  currentQuantity: 0
-  maxInventoryQuantity: 4
 --- !u!114 &1118675846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,11 +1445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e483fe97cde04df6bd2773f89e0c5963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hotbarQuantityHandler: {fileID: 1118675845}
-  _gridLayoutGroup: {fileID: 0}
-  _rectTransform: {fileID: 0}
-  _sizeDelta: {x: 0, y: 0}
-  _cellSize: {x: 0, y: 0}
 --- !u!114 &1118675850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1465,15 +1457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728cc0a572c34e7d9daee226895726ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hotbarQuantityHandler: {fileID: 1118675845}
-  itemFramePrefab: {fileID: 4706538465785724848, guid: 0c4a9142d9cbb38429a1779accf46f3f, type: 3}
-  pivot: {fileID: 1971463995}
-  _currentCapacity: 0
-  _frames:
-  - {fileID: 0}
-  _hotbarItems:
-  - {fileID: 11400000, guid: 907b5b3492666454ba82fdfd3e6cfcd8, type: 2}
-  - {fileID: 11400000, guid: f54229a00752b8c449d784e9373bd5d2, type: 2}
 --- !u!1 &1144284455
 GameObject:
   m_ObjectHideFlags: 0

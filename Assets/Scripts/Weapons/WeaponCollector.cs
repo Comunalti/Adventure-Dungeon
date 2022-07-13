@@ -17,19 +17,13 @@ namespace Weapons
 
         private void OnEPressed()
         {
-            print("E");
             if (proximityObserver != null)
             {
                 
                 var collectable = proximityObserver.GetComponent<WeaponCollectable>();
-                print(collectable);
-                print("collectable foi");
                 if (collectable)
                 { 
-                    print("BBBBBB");
-                    print(weaponCollectableFactory);
                     weaponCollectableFactory.DropActiveWeapons();
-                    print("CCCCC");
                     var instance = collectable.GetClone();
                     inventoryController.Add(instance);
                     Destroy(proximityObserver.gameObject);

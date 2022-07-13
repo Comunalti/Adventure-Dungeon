@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2cbdf8a9d0469d973c9b0eacaa6042, type: 3}
   m_Name: MultipleShootPattern
   m_EditorClassIdentifier: 
-  angleInterval: 3
-  bulletsFired: 9
+  angleInterval: 9
+  bulletsFired: 3

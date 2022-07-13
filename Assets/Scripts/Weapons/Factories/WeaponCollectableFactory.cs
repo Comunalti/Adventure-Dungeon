@@ -13,10 +13,8 @@ namespace Weapons.Factories
         public GameObject hotBar;
         public void DropActiveWeapons()
         {
-            print("AAAAA");
             for (int i = transform.childCount - 1; i >= 0; i--)
             {
-                print(i);
                 var child = transform.GetChild(i);
                 if (child.gameObject.activeSelf)
                 {

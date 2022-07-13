@@ -12,12 +12,12 @@ public class HealthUiFillAmount : MonoBehaviour
     
     private void OnEnable()
     {
-        healthController.RemoveHpEvent += OnDamage;
+        healthController.HpChangedEvent += OnDamage;
     }
 
     private void OnDisable()
     {
-        healthController.RemoveHpEvent -= OnDamage;
+        healthController.HpChangedEvent -= OnDamage;
     }
 
     private void OnDamage(float obj)

@@ -25,18 +25,23 @@ namespace Bullets
 
         private void OnBulletLifeTimeExpire()
         {
-            animator.SetTrigger("Explode");
-            
+            //animator.SetTrigger("Destroy");
+            animator.enabled = true;
+            animator.Play("destroy_bullet");
         }
 
         private void OnBulletHit()
         {
-            animator.SetTrigger("Explode");
+            //animator.SetTrigger("Destroy");
+            animator.enabled = true;
+            animator.Play("destroy_bullet");
         }
 
         private void OnBulletDestroyed()
         {
-            animator.SetTrigger("Explode");
+            //animator.SetTrigger("Explode");
+            animator.enabled = true;
+            animator.Play("explode_bullet");
         }
 
         public void DestroyBullet()
