@@ -23,7 +23,7 @@ namespace AI.StateMachine.Machines
         public void ResetTimer(string timerTag)
         {
             var timer = _timersList.Find((timer => timer.name == timerTag));
-            print(timer.name);
+            //print(timer.name);
             timer.current = timer.max;
         }
         

@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d0048a40f54482a314dc2e8eabec19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: 0.1
+  attackDelay: 0.5
   energyCost: 0.5
   precisionRange: {x: -15, y: 15}
   distribution:

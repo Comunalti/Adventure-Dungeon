@@ -74,22 +74,49 @@ namespace DefaultNamespace.AI.StateMachine
             }
             Debug.DrawLine(transform.position,opponentTargetHandler.transform.position);
             var raycastResult = Physics2D.RaycastAll(transform.position,opponentTargetHandler.transform.position-transform.position);
+            
             // foreach (var raycastHit2D in raycastResult)
             // {
             //     print(raycastHit2D.transform.gameObject.name);
             // }
             
             //print(raycastResult.Length);
-            var raycastHits = raycastResult.Where(hit =>
+            
+            var col = GetComponent<Collider2D>();
+            var opponentCollider = opponentTargetHandler.GetComponent<Collider2D>();
+
+            bool blocked = false;
+            foreach (var hit2D in raycastResult)
             {
-                var col = GetComponent<Collider2D>();
-                var opponentCollider = opponentTargetHandler.GetComponent<Collider2D>();
-                return !(hit.collider == col ||
-                         hit.collider == opponentCollider) &&
-                       !opponentCollider.isTrigger;
-            });
-            //print($"real colliders in the line is: {raycastHits.Count()}");
-            return !raycastHits.Any();
+                if (hit2D.collider == opponentCollider)
+                {   
+                    break;
+                }
+                else if(hit2D.collider != col)
+                {
+                    blocked = true;
+                }
+            }
+            //print($"is blocked: {blocked}");
+            
+            // var raycastHits = raycastResult.Where(hit =>
+            // {
+            //     return !(hit.collider == col ||
+            //              hit.collider == opponentCollider) &&
+            //            !hit.collider.isTrigger;
+            // });
+            //
+            
+            
+            //*// print($"real colliders in the line is: {raycastHits.Count()}");
+            ////  print("----------------");
+           // //  foreach (var raycastHit2D in raycastHits)
+           // //  {
+           // //      print(raycastHit2D.transform.gameObject.name);
+           // //      print(raycastHit2D.point);
+           // //  }
+           // //  print(!raycastHits.Any());
+            return !blocked;
         }
     }
     

@@ -8,7 +8,7 @@ namespace DefaultNamespace.AI.StateMachine.Decisions
         public override bool Decide(BaseStateMachine stateMachine)
         {
             var decide = !stateMachine.targetHandler.CanSeeFirstOpponent();
-            Debug.Log($"cant see player: {decide}");
+            //Debug.Log($"cant see player: {decide}");
             return decide;
         }
     }

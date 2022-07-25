@@ -1,8 +1,6 @@
 ﻿using System;
 using Health;
-using TMPro.EditorUtilities;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Energy
 {

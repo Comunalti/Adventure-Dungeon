@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c18276176b14786a8989cb9e4ced073, type: 3}
   m_Name: VeryNear
   m_EditorClassIdentifier: 
-  distanceLimit: 3.28
+  distanceLimit: 4

@@ -19,7 +19,7 @@ namespace DefaultNamespace.AI.StateMachine
             points = new Vector3[pointCount];
             for (int i = 0; i < pointCount; i++)
             {
-                points[i] = new Vector2(Random.Range(-1f,1f), Random.Range(-1f,1f))*radius;
+                points[i] = (Vector2)transform.position + new Vector2(Random.Range(-1f,1f), Random.Range(-1f,1f))*radius;
                 
             }
         }

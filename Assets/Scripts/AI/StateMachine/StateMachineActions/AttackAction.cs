@@ -7,7 +7,7 @@ namespace DefaultNamespace.AI.StateMachine.StateMachineActions
     {
         public override void Execute(BaseStateMachine machine)
         {
-            machine.gameObject.SendMessage("CallFire",SendMessageOptions.RequireReceiver);
+            machine.gameObject.BroadcastMessage("Shoot",SendMessageOptions.RequireReceiver);
         }
     }
 }
