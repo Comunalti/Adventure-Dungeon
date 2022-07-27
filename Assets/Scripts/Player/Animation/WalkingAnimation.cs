@@ -21,13 +21,13 @@ namespace Player.Animation
         {
             if (obj)
             {
-                animator.speed = 1;
-                //animator.Play("Walking"); 
+                //animator.speed = 1;
+                animator.Play("Walking"); 
             }
             else
             {          
-                animator.speed = 0;
-                //animator.Play("idle");
+                //animator.speed = 0;
+                animator.Play("idle");
             }
             
         }

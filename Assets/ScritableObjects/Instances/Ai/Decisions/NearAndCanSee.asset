@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a5dede6ec1490faeb9567dc055784b, type: 3}
   m_Name: NearAndCanSee
   m_EditorClassIdentifier: 
-  distanceLimit: 6
+  distanceLimit: 10

@@ -96,8 +96,8 @@ namespace Bullets
             }
             else
             {
-                enabled = false;
-                BulletDestroyedEvent?.Invoke();
+                //enabled = false;
+                //BulletDestroyedEvent?.Invoke();
                // Destroy(gameObject);
 
             }

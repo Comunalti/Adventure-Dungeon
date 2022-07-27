@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: e684eb0261b47eb438f33147b5493191
+guid: 0a6eabaf71f0bf1409d2417d6941995e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4028938568096637910
-    second: sprites_mira_2.0-sem_fundo_0
+      213: -3853930057603171895
+    second: Bala_raio_0
   - first:
-      213: -4828862898013716952
-    second: sprites_mira_2.0-sem_fundo_1
+      213: 7283852003380301457
+    second: Bala_raio_1
   - first:
-      213: -8471477029361689737
-    second: sprites_mira_2.0-sem_fundo_2
+      213: -8672417093738386217
+    second: Bala_raio_2
   - first:
-      213: 6893614260120960440
-    second: sprites_mira_2.0-sem_fundo_3
+      213: 6414836597191462722
+    second: Bala_raio_3
+  - first:
+      213: -2861683957421424223
+    second: Bala_raio_4
+  - first:
+      213: -8713684239682733564
+    second: Bala_raio_5
+  - first:
+      213: 4817716693418512609
+    second: Bala_raio_6
+  - first:
+      213: 4978683482918402994
+    second: Bala_raio_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_mira_2.0-sem_fundo_0
+      name: Bala_raio_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d3654d084aa9e730800000000000000
-      internalID: 4028938568096637910
+      spriteID: 9c9bc571807148ac0800000000000000
+      internalID: -3853930057603171895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_mira_2.0-sem_fundo_1
+      name: Bala_raio_1
       rect:
         serializedVersion: 2
         x: 32
@@ -150,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e34d657ce6cfcb0800000000000000
-      internalID: -4828862898013716952
+      spriteID: 19e000a3ec0751560800000000000000
+      internalID: 7283852003380301457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_mira_2.0-sem_fundo_2
+      name: Bala_raio_2
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77bd30e86844f6a80800000000000000
-      internalID: -8471477029361689737
+      spriteID: 7dca2b70a9265a780800000000000000
+      internalID: -8672417093738386217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_mira_2.0-sem_fundo_3
+      name: Bala_raio_3
       rect:
         serializedVersion: 2
         x: 96
@@ -192,8 +204,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bdb31945a90baf50800000000000000
-      internalID: 6893614260120960440
+      spriteID: 24fc5cbd5e3160950800000000000000
+      internalID: 6414836597191462722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bala_raio_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a146724a914948d0800000000000000
+      internalID: -2861683957421424223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bala_raio_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a7ac0e956c21780800000000000000
+      internalID: -8713684239682733564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bala_raio_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e01eabaec7fbd240800000000000000
+      internalID: 4817716693418512609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bala_raio_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbb470ef36d71540800000000000000
+      internalID: 4978683482918402994
       vertices: []
       indices: 
       edges: []

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: e684eb0261b47eb438f33147b5493191
+guid: 00cb2546e31924f41b4f25745b52e6ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4028938568096637910
-    second: sprites_mira_2.0-sem_fundo_0
+      213: -1038958437682597674
+    second: Bala_gelo_0
   - first:
-      213: -4828862898013716952
-    second: sprites_mira_2.0-sem_fundo_1
+      213: -4333703856634792625
+    second: Bala_gelo_1
   - first:
-      213: -8471477029361689737
-    second: sprites_mira_2.0-sem_fundo_2
+      213: -566602225249629041
+    second: Bala_gelo_2
   - first:
-      213: 6893614260120960440
-    second: sprites_mira_2.0-sem_fundo_3
+      213: 5783570706283672027
+    second: Bala_gelo_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_mira_2.0-sem_fundo_0
+      name: Bala_gelo_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d3654d084aa9e730800000000000000
-      internalID: 4028938568096637910
+      spriteID: 6d0b8893ec0e491f0800000000000000
+      internalID: -1038958437682597674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_mira_2.0-sem_fundo_1
+      name: Bala_gelo_1
       rect:
         serializedVersion: 2
         x: 32
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e34d657ce6cfcb0800000000000000
-      internalID: -4828862898013716952
+      spriteID: f45fa87ad479bd3c0800000000000000
+      internalID: -4333703856634792625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_mira_2.0-sem_fundo_2
+      name: Bala_gelo_2
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77bd30e86844f6a80800000000000000
-      internalID: -8471477029361689737
+      spriteID: f8ccc0337460328f0800000000000000
+      internalID: -566602225249629041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_mira_2.0-sem_fundo_3
+      name: Bala_gelo_3
       rect:
         serializedVersion: 2
         x: 96
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bdb31945a90baf50800000000000000
-      internalID: 6893614260120960440
+      spriteID: bd1b4692aee534050800000000000000
+      internalID: 5783570706283672027
       vertices: []
       indices: 
       edges: []

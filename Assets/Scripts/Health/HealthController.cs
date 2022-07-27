@@ -61,7 +61,11 @@ namespace Health
         }
         public void RemoveCurrentHealth(float quantity , bool ignoreInvincibility = false)
         {
-            if (isDead) return;
+            if (isDead)
+            {
+                DeathEvent?.Invoke();
+                return;
+            }
 
             if (isInvincible)
                 if (ignoreInvincibility == false)

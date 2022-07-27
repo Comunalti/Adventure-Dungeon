@@ -3,6 +3,7 @@ using System.Collections;
 using Energy;
 using Health;
 using Managers;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -19,14 +20,16 @@ namespace DefaultNamespace
         public float energyCost;
         
         private bool dashInput = false;
-        private bool dashActive = false;
+        public bool dashActive = false;
         private Vector2 inputDirection;
-        private bool canCancelAnimation = false;
 
         private float currentAnimationTime = 0;
         public float dashSpeedScale = 1;
         public float dashTime;
         private Vector2 storedDirection;
+
+        public GameObject playerShadowPrefab;
+        public Transform playerShadowSpawnTransform;
 
         public void EnterInvincibleFrame()
         {
@@ -42,7 +45,7 @@ namespace DefaultNamespace
 
         public void SetCancelAnimation()
         {
-            canCancelAnimation = true;
+            dashActive = false;
         }
         
         
@@ -51,48 +54,52 @@ namespace DefaultNamespace
         {
             
             dashInput = true;
-            canCancelAnimation = false;
             if (!dashActive && energy.Have(energyCost))
             {
                 energy.RemoveCurrentEnergy(energyCost);
                 storedDirection = inputDirection;
                 dashActive = true;
                 currentAnimationTime = 0;
-                StartCoroutine(DoDash());
-                StartCoroutine(Temporary());
+                DoDash();
+                //StartCoroutine(Temporary());
             }
         }
 
-        private IEnumerator Temporary()
+        private void Update()
         {
-            yield return new WaitForSeconds(dashTime);
-            SetCancelAnimation();
-        }
-
-        private IEnumerator DoDash()
-        {
-            while (dashActive)
+            
+            if (dashActive)
             {
                 rigidbody2D.velocity = storedDirection * playerSpeedProfile.Evaluate(currentAnimationTime) * dashSpeedScale;
                 currentAnimationTime += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
-            }
+            } 
+        }
+
+        private void DoDash()
+        {
+            animator.Play("Dash");
             
         }
-
-        private void OnStopDashInput()
+        
+        [ContextMenu("Spawn Shadow")]
+        public void SpawnShadow()
         {
-            dashInput = false;
-
-            StartCoroutine(CancelAnimation());
+            var instance = Instantiate(playerShadowPrefab, playerShadowSpawnTransform.position, quaternion.identity);
+            instance.GetComponent<SpriteRenderer>().sprite = playerShadowPrefab.GetComponent<SpriteRenderer>().sprite;
         }
+        // private void OnStopDashInput()
+        // {
+        //     dashInput = false;
+        //
+        //     StartCoroutine(CancelAnimation());
+        // }
 
-        private IEnumerator CancelAnimation()
-        {
-            yield return new WaitUntil(() => canCancelAnimation);
-            dashActive = false;
-            //animator.SetTrigger("CancelDash");
-        }
+        // private IEnumerator CancelAnimation()
+        // {
+        //     yield return new WaitUntil(() => canCancelAnimation);
+        //     dashActive = false;
+        //     //animator.SetTrigger("CancelDash");
+        // }
 
 
         private void OnDirectionChanged(Vector2 obj)
@@ -103,7 +110,7 @@ namespace DefaultNamespace
         private void OnEnable()
         {
             InputManager.Instance.DashEvent += OnDashInput;
-            InputManager.Instance.DashStopEvent += OnStopDashInput;
+            //InputManager.Instance.DashStopEvent += OnStopDashInput;
             InputManager.Instance.DirectionChangedEvent += OnDirectionChanged;
         }
         
@@ -111,7 +118,7 @@ namespace DefaultNamespace
         private void OnDisable()
         {
             InputManager.Instance.DashEvent -= OnDashInput;
-            InputManager.Instance.DashStopEvent -= OnStopDashInput;
+            //InputManager.Instance.DashStopEvent -= OnStopDashInput;
             InputManager.Instance.DirectionChangedEvent -= OnDirectionChanged;
 
 
