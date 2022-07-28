@@ -30,19 +30,7 @@ namespace Bullets
 
 
         private Entity entityOwner;
-
         
-        
-        private void OnEnable()
-        {
-            
-        }
-
-        
-        private void OnDisable()
-        {
-            
-        }
 
         private void Awake()
         {
@@ -73,16 +61,21 @@ namespace Bullets
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.CompareTag("Bullet"))
-            { 
-                return;
-            }
-            
+            if (col.CompareTag("Bullet")) return;
+
             var entity = col.GetComponentInChildren<Entity>();
             
-            if ( entity != null &&(entity.entitySO == entityOwner.entitySO || entityOwner.entitySO.DoesNotAttack(entity.entitySO)) )
+            if (col.isTrigger)
             {
                 return;
+            }
+
+            if (entity!=null)
+            {
+                if ( entity.entitySO == entityOwner.entitySO || entityOwner.entitySO.DoesNotAttack(entity.entitySO) )
+                {
+                    return;
+                }
             }
             
             var healthComponent = col.GetComponentInChildren<HealthController>();
@@ -92,14 +85,11 @@ namespace Bullets
                 healthComponent.RemoveCurrentHealth(damage);
                 enabled = false;
                 BulletHitEvent?.Invoke();
-                //Destroy(gameObject);
             }
             else
             {
-                //enabled = false;
-                //BulletDestroyedEvent?.Invoke();
-               // Destroy(gameObject);
-
+                enabled = false;
+                BulletDestroyedEvent?.Invoke();
             }
         }
     }

@@ -25,9 +25,9 @@ namespace Player
 
         private void OnPlayerDeath()
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
 
-            GameManager.Instance.GameEndEvent.Invoke();
+            //GameManager.Instance.GameEndEvent.Invoke();
         }
     }
 }

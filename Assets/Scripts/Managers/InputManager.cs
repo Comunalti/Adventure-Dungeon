@@ -36,12 +36,21 @@ namespace Managers
 
         private void Start()
         {
+            if (created)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            else
+            {
+                created = true;
+                DontDestroyOnLoad(gameObject);
+            }
             controlMap = new ControlMap();
             controlMap.MouseMap.SetCallbacks(this);
             controlMap.MovimentMap.SetCallbacks(this);
             controlMap.KeyboardMap.SetCallbacks(this);
             controlMap.Enable();
-            
         }
 
 

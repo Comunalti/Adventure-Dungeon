@@ -588,6 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetType: 0
+  visibleFlag: 0
 --- !u!114 &8028054363185822282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,8 +636,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1491dad5b93403ca0bb2647dbbe446d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthController: {fileID: 0}
-  prefab: []
+  healthController: {fileID: 8028054363185822290}
+  prefab:
+  - {fileID: 4269273908755040749, guid: daa8c52841c0b334f912f7b64b81821a, type: 3}
 --- !u!1 &8028054363782112209
 GameObject:
   m_ObjectHideFlags: 0

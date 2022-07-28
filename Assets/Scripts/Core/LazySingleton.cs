@@ -5,6 +5,7 @@ namespace Core
     public class LazySingleton<T> : MonoBehaviour where T : LazySingleton<T>
     {
         private static T instance;
+        protected static bool created = false;
 
         public static T Instance
         {

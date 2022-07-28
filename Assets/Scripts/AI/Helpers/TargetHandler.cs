@@ -10,6 +10,8 @@ namespace DefaultNamespace.AI.StateMachine
     {
         public TargetType targetType = TargetType.enemy;
         public static List<TargetHandler> targetHandlers = new List<TargetHandler>();
+        [SerializeField] private bool visibleFlag;
+
         private void OnEnable()
         {
             targetHandlers.Add(this);
@@ -19,8 +21,8 @@ namespace DefaultNamespace.AI.StateMachine
         {
             targetHandlers.Remove(this);
         }
-
         
+
         public TargetHandler GetClosestOpponent(bool getOwnTeam = false)
         {
             TargetHandler nearTarget = null;
@@ -66,12 +68,20 @@ namespace DefaultNamespace.AI.StateMachine
 
         public bool CanSeeFirstOpponent()
         {
+            
             var opponentTargetHandler = GetClosestOpponent();
 
             if (opponentTargetHandler is null)
             {
                 return false;
             }
+            
+            if (GetDistance(opponentTargetHandler)>20)
+            {
+                return false;
+            }
+
+            
             //Debug.DrawLine(transform.position,opponentTargetHandler.transform.position);
             var raycastResult = Physics2D.RaycastAll(transform.position,opponentTargetHandler.transform.position-transform.position);
             

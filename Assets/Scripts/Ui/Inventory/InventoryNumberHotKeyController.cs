@@ -17,10 +17,13 @@ namespace Ui.Inventory
         private void OnNumberPressedEvent(int obj)
         {
             var index = (obj + 9) % 10;
-            var child = transform.GetChild(index);
-            print(child.gameObject);
-            var toggle = child.GetComponent<Toggle>();
-            toggle.isOn = !toggle.isOn;
+            if (index>=0 && index<=2)
+            {
+                var child = transform.GetChild(index);
+                //print(child.gameObject);
+                var toggle = child.GetComponent<Toggle>();
+                toggle.isOn = !toggle.isOn;
+            }
         }
 
         private void OnDisable()
