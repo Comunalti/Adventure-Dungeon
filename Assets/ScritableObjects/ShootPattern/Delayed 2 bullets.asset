@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4146b84b261542a397523eefeb36dc32, type: 3}
   m_Name: Delayed 2 bullets
   m_EditorClassIdentifier: 
-  timeInterval: 0.2
+  timeInterval: 0.1
   bulletsFired: 2

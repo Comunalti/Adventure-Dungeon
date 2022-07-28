@@ -549,6 +549,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   energy: {fileID: 3739615366164663362}
   energyCost: 2
+  dashActive: 0
   dashSpeedScale: 15
   dashTime: 0.15
   playerShadowPrefab: {fileID: 5617892925556927101, guid: 13f8ce03d5e477946b1d079d5fc491a6, type: 3}
@@ -52734,7 +52735,7 @@ PrefabInstance:
     - target: {fileID: 7074461432914070822, guid: 6dcada7e43250124db004b1d5eb71b29, type: 3}
       propertyPath: weaponPrefab
       value: 
-      objectReference: {fileID: 6018988922143593037, guid: e6847379f74e33f49b45330f74a4f3a6, type: 3}
+      objectReference: {fileID: 6018988922143593037, guid: c400bd464a6ad654fa60682af2a0fe08, type: 3}
     - target: {fileID: 8436440839799721770, guid: 6dcada7e43250124db004b1d5eb71b29, type: 3}
       propertyPath: m_Name
       value: Collection Handler metralhadora (2)
@@ -52759,6 +52760,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8436440839799721772, guid: 6dcada7e43250124db004b1d5eb71b29, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cc64778441e2843af7bf8de03001da, type: 2}
     - target: {fileID: 8436440839799721773, guid: 6dcada7e43250124db004b1d5eb71b29, type: 3}
       propertyPath: m_RootOrder
       value: 7

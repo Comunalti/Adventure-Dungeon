@@ -147,10 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b383fb84d7547fd855421d34600441d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
   elementalDamage: {fileID: 0}
   lifeTime: 2
-  lifeTimeRange: {x: 0.6, y: 0.9}
+  lifeTimeRange: {x: 1, y: 1.2}
   lifeTimeDistribution:
     serializedVersion: 2
     m_Curve:

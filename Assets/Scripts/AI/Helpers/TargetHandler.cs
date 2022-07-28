@@ -72,7 +72,7 @@ namespace DefaultNamespace.AI.StateMachine
             {
                 return false;
             }
-            Debug.DrawLine(transform.position,opponentTargetHandler.transform.position);
+            //Debug.DrawLine(transform.position,opponentTargetHandler.transform.position);
             var raycastResult = Physics2D.RaycastAll(transform.position,opponentTargetHandler.transform.position-transform.position);
             
             // foreach (var raycastHit2D in raycastResult)

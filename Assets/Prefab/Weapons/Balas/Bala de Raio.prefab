@@ -150,7 +150,7 @@ MonoBehaviour:
   damage: 1
   elementalDamage: {fileID: 0}
   lifeTime: 2
-  lifeTimeRange: {x: 0.6, y: 0.9}
+  lifeTimeRange: {x: 1, y: 1.2}
   lifeTimeDistribution:
     serializedVersion: 2
     m_Curve:
@@ -175,7 +175,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedRange: {x: 7, y: 8}
+  speedRange: {x: 8, y: 9}
   speedRangeDistribution:
     serializedVersion: 2
     m_Curve:
