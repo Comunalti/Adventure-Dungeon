@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/FinalScenes/CenaSalva4.unity
-    guid: c85168db54ca5be4cb78bd3319f75845
-  - enabled: 1
     path: Assets/Scenes/FinalScenes/DeathScene.unity
     guid: f400793f10b16d540b4ac9306c438da3
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/CenaSalva4.unity
+    guid: c85168db54ca5be4cb78bd3319f75845
   - enabled: 1
     path: Assets/Scenes/FinalScenes/ManagerScene.unity
     guid: e92985d9bef085c4986fbef8cbabb6dd

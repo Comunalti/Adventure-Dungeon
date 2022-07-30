@@ -14,7 +14,7 @@ namespace DefaultNamespace.AI.StateMachine
         public Vector3[] points;
 
 
-        private void Start()
+        private void Awake()
         {
             points = new Vector3[pointCount];
             for (int i = 0; i < pointCount; i++)

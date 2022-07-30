@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d0048a40f54482a314dc2e8eabec19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: 0.2
+  attackDelay: 1
   energyCost: 2
   precisionRange: {x: -7, y: 7}
   distribution:
@@ -106,7 +106,7 @@ MonoBehaviour:
   spawnPivot: {fileID: 6018988921970018998}
   shootPattern: {fileID: 11400000, guid: 675d4e8fa73a1d84ab2f4e2cd7eba54b, type: 2}
   rarityPattern: {fileID: 0}
-  bulletPrefab: {fileID: 2918261359518890461, guid: b4b5458297ead544f8d0f63601301570, type: 3}
+  bulletPrefab: {fileID: 2918261359518890461, guid: ac3e6541a72e5e04383c3a19e278c597, type: 3}
   energy: {fileID: 0}
   owner: {fileID: 0}
 --- !u!1 &6620043555496801141

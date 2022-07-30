@@ -40,7 +40,7 @@ namespace Weapons.Controllers
             if (isPressing)
             {
                 //print("is pressing");
-                //gameObject.BroadcastMessage("ContinuousShoot",SendMessageOptions.DontRequireReceiver);
+                gameObject.BroadcastMessage("ContinuousShoot",SendMessageOptions.DontRequireReceiver);
             }
         }
 

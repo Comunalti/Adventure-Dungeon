@@ -63,7 +63,6 @@ namespace Health
         {
             if (isDead)
             {
-                DeathEvent?.Invoke();
                 return;
             }
 
