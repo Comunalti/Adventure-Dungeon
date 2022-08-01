@@ -6,7 +6,6 @@ namespace Managers
 {
     public class GameManager : LazySingleton<GameManager>
     {
-
-        public Action GameEndEvent;
+        
     }
 }

@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/FinalScenes/DeathScene.unity
-    guid: f400793f10b16d540b4ac9306c438da3
+    path: Assets/Scenes/FinalScenes/MainMenuScene.unity
+    guid: efd95cd4107732c42b14df073eeb7d57
   - enabled: 1
     path: Assets/Scenes/FinalScenes/CenaSalva4.unity
     guid: c85168db54ca5be4cb78bd3319f75845
   - enabled: 1
+    path: Assets/Scenes/FinalScenes/DeathScene.unity
+    guid: 3d9d953f4bd76fa49aa1a40a4f41c998
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/WinScene.unity
+    guid: f400793f10b16d540b4ac9306c438da3
+  - enabled: 0
     path: Assets/Scenes/FinalScenes/ManagerScene.unity
     guid: e92985d9bef085c4986fbef8cbabb6dd
   m_configObjects:

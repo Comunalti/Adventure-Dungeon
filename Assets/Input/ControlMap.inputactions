@@ -267,6 +267,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "EscPressAction",
+                    "type": "Button",
+                    "id": "d05ce94e-d1a1-4caf-86d9-b90d83512803",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -454,6 +463,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "XPressAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b33ee826-cfbc-4233-8b07-d71bf9f982c0",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EscPressAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

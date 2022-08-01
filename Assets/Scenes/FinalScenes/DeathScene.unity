@@ -3919,7 +3919,7 @@ GameObject:
   - component: {fileID: 687441155}
   - component: {fileID: 687441158}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Restart Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4135,8 +4135,9 @@ GameObject:
   - component: {fileID: 1110487802}
   - component: {fileID: 1110487801}
   - component: {fileID: 1110487800}
+  - component: {fileID: 1110487803}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4243,6 +4244,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110487798}
   m_CullTransparentMesh: 1
+--- !u!114 &1110487803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110487798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b58f1625e24bd9ba0531149896216a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1110487800}
+  sceneName: MainMenuScene
 --- !u!1 &1424814566
 GameObject:
   m_ObjectHideFlags: 0

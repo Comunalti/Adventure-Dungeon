@@ -21,7 +21,10 @@ namespace Weapons.UI
         private void OnWeaponChanged(GameObject obj)
         {
             //print("opa");
-            spriteRenderer.sprite = obj.GetComponentInChildren<SpriteRenderer>().sprite;
+            var renderer = obj.GetComponentInChildren<SpriteRenderer>();
+            
+            spriteRenderer.sprite = renderer.sprite;
+            spriteRenderer.color = renderer.color;
         }
 
         private void Start()

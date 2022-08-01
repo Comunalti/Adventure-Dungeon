@@ -22,7 +22,7 @@ namespace Ui.Inventory
             {
                 var siblingIndex = firstActiveToggle.transform.GetSiblingIndex();
                 var childCount = transform.childCount;
-                var nextIndex = (siblingIndex + (obj ? 1 : -1) + childCount) % childCount;
+                var nextIndex = (siblingIndex + (obj ? -1 : 1) + childCount) % childCount;
                 //print(nextIndex);
                 transform.GetChild(nextIndex).GetComponent<Toggle>().isOn = true;
             }

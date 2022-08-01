@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 5464328994206229253}
   - component: {fileID: 7556263581955772814}
   - component: {fileID: 6762809604757945682}
+  - component: {fileID: 3508249117797100582}
   m_Layer: 5
   m_Name: WeaponFrame
   m_TagString: Untagged
@@ -266,3 +267,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 167393710327462081}
   defaultSprite: {fileID: 304999138783672397, guid: 644f8dbb36a429946ac51d8c39b9d6f6, type: 3}
+--- !u!114 &3508249117797100582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5464328994206229255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075f69ca130d496abc5dd08392ce685b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 5464328994206229253}
+  image: {fileID: 5464328993162573396}
+  selectedSprite: {fileID: 21300000, guid: f8e6e9c2ad50d3648b2e2900131e9bab, type: 3}
+  unSelectedSprite: {fileID: 21300000, guid: 37c553d4de887b84ab53b80807cfc01b, type: 3}

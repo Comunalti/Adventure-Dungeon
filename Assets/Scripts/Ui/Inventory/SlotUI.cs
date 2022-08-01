@@ -30,11 +30,14 @@ namespace Ui.Inventory
         {
             if (obj != null)
             {
-                image.sprite = obj.GetComponentInChildren<SpriteRenderer>().sprite;
+                var spriteRenderer = obj.GetComponentInChildren<SpriteRenderer>();
+                image.sprite = spriteRenderer.sprite;
+                image.color = spriteRenderer.color;
             }
             else
             {
                 image.sprite = defaultSprite;
+                image.color = Color.white;
             }
         }
 

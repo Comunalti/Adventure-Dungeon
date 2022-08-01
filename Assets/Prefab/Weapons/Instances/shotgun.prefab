@@ -106,7 +106,7 @@ MonoBehaviour:
   spawnPivot: {fileID: 6018988921970018998}
   shootPattern: {fileID: 11400000, guid: 675d4e8fa73a1d84ab2f4e2cd7eba54b, type: 2}
   rarityPattern: {fileID: 0}
-  bulletPrefab: {fileID: 2918261359518890461, guid: ac3e6541a72e5e04383c3a19e278c597, type: 3}
+  bulletPrefab: {fileID: 2918261359518890461, guid: 1a460b2d86b3e624ea015f34aef48f74, type: 3}
   energy: {fileID: 0}
   owner: {fileID: 0}
 --- !u!1 &6620043555496801141

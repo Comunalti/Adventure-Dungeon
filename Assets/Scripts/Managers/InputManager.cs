@@ -19,6 +19,7 @@ namespace Managers
         public event Action QPressEvent;
         public event Action RPressEvent;
         public event Action FPressEvent;
+        public event Action EscPressEvent;
         public event Action XPressEvent;
 
         public event Action AltPressEnddedEvent;
@@ -175,6 +176,14 @@ namespace Managers
             if (context.ReadValueAsButton() && context.performed)
             {
                 XPressEvent?.Invoke();
+            }    
+        }
+
+        public void OnEscPressAction(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton() && context.performed)
+            {
+                EscPressEvent?.Invoke();
             }    
         }
 
